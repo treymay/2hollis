@@ -12,6 +12,7 @@
     "hero": {
       "type": "page-hero",
       "settings": {
+        "compact": false,
         "eyebrow": "Official Merch",
         "heading": "Shop",
         "description": "STAR tour exclusives, hoodies, tees, hats, posters, and limited drops. Official 2HOLLIS merchandise.",
@@ -23,7 +24,7 @@
     "main": {
       "type": "shop-page",
       "settings": {
-        "collection": "",
+        "collection": "frontpage",
         "show_featured": true,
         "featured_label": "Featured",
         "featured_limit": 3,
@@ -39,9 +40,15 @@
         "eyebrow": "Drops",
         "heading": "Merch Alerts",
         "text": "Be first to know about restocks, tour exclusives, and limited releases.",
-        "button_label": "Join"
+        "button_label": "Join",
+        "link": "",
+        "link_label": "More info"
       }
     }
   },
-  "order": ["hero", "main", "cta"]
+  "order": [
+    "hero",
+    "main",
+    "cta"
+  ]
 }
