@@ -23,16 +23,27 @@
     {%- if section.settings.hero_video != blank -%}
       {{ section.settings.hero_video | video_tag: autoplay: true, loop: true, muted: true, playsinline: true, controls: false, preload: 'metadata', class: 'hero__video' }}
     {%- elsif section.settings.video_url != blank -%}
-      <video class="hero__video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+      <video
+        class="hero__video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-hidden="true"
+        disablepictureinpicture
+        controlslist="nodownload noplaybackrate noremoteplayback nofullscreen"
+      >
         <source src="{{ section.settings.video_url }}" type="video/mp4">
       </video>
     {%- elsif section.settings.youtube_id != blank -%}
       <div class="hero__yt" aria-hidden="true">
         <iframe
-          src="https://www.youtube.com/embed/{{ section.settings.youtube_id }}?autoplay=1&mute=1&loop=1&playlist={{ section.settings.youtube_id }}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+          src="https://www.youtube-nocookie.com/embed/{{ section.settings.youtube_id }}?autoplay=1&mute=1&loop=1&playlist={{ section.settings.youtube_id }}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&fs=0&iv_load_policy=3&cc_load_policy=0&autohide=1"
           title="2HOLLIS"
           allow="autoplay; encrypted-media"
           referrerpolicy="strict-origin-when-cross-origin"
+          tabindex="-1"
         ></iframe>
       </div>
     {%- endif -%}
@@ -40,12 +51,6 @@
 
   <div class="hero__overlay">
     {% render 'logo', width: 120, class: 'site-logo site-logo--hero' %}
-  </div>
-
-  <div class="hero__controls">
-    {%- if section.settings.hero_video != blank or section.settings.video_url != blank -%}
-      <button type="button" class="hero__sound type-nav" data-sound aria-pressed="false">SOUND OFF</button>
-    {%- endif -%}
   </div>
 
   <div class="hero__scroll type-label" aria-hidden="true">Scroll</div>

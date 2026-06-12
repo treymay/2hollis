@@ -46,10 +46,10 @@
 
     var video = hero.querySelector('video');
     var poster = hero.querySelector('[data-poster]');
-    var sound = hero.querySelector('[data-sound]');
 
     if (video) {
       video.muted = true;
+      video.controls = false;
       var play = video.play();
       if (play && play.catch) {
         play.catch(function () {
@@ -58,16 +58,6 @@
       }
       video.addEventListener('playing', function () {
         if (poster) poster.style.opacity = '0';
-      });
-    }
-
-    if (sound && video) {
-      var muted = true;
-      sound.addEventListener('click', function () {
-        muted = !muted;
-        video.muted = muted;
-        sound.setAttribute('aria-pressed', String(!muted));
-        sound.textContent = muted ? 'SOUND OFF' : 'SOUND ON';
       });
     }
   }
