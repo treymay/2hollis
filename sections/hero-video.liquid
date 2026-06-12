@@ -31,20 +31,21 @@
         playsinline
         preload="metadata"
         aria-hidden="true"
+        tabindex="-1"
         disablepictureinpicture
+        disableremoteplayback
         controlslist="nodownload noplaybackrate noremoteplayback nofullscreen"
       >
         <source src="{{ section.settings.video_url }}" type="video/mp4">
       </video>
     {%- elsif section.settings.youtube_id != blank -%}
       <div class="hero__yt" aria-hidden="true">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/{{ section.settings.youtube_id }}?autoplay=1&mute=1&loop=1&playlist={{ section.settings.youtube_id }}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&fs=0&iv_load_policy=3&cc_load_policy=0&autohide=1"
-          title="2HOLLIS"
-          allow="autoplay; encrypted-media"
-          referrerpolicy="strict-origin-when-cross-origin"
-          tabindex="-1"
-        ></iframe>
+        <div
+          class="hero__yt-player"
+          id="hero-yt-{{ section.id }}"
+          data-youtube-id="{{ section.settings.youtube_id }}"
+        ></div>
+        <div class="hero__yt-shield" aria-hidden="true"></div>
       </div>
     {%- endif -%}
   </div>

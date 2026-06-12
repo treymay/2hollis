@@ -50,6 +50,7 @@
     if (video) {
       video.muted = true;
       video.controls = false;
+      video.removeAttribute('controls');
       var play = video.play();
       if (play && play.catch) {
         play.catch(function () {
@@ -60,6 +61,72 @@
         if (poster) poster.style.opacity = '0';
       });
     }
+
+    initYouTubeHero(hero, poster);
+  }
+
+  function initYouTubeHero(hero, poster) {
+    if (reduced) return;
+
+    var container = hero.querySelector('[data-youtube-id]');
+    if (!container) return;
+
+    var videoId = container.getAttribute('data-youtube-id');
+    if (!videoId) return;
+
+    function mountPlayer() {
+      new YT.Player(container.id, {
+        videoId: videoId,
+        width: '100%',
+        height: '100%',
+        playerVars: {
+          autoplay: 1,
+          controls: 0,
+          disablekb: 1,
+          fs: 0,
+          iv_load_policy: 3,
+          modestbranding: 1,
+          playsinline: 1,
+          rel: 0,
+          mute: 1,
+          loop: 1,
+          playlist: videoId,
+          enablejsapi: 1,
+          origin: window.location.origin
+        },
+        events: {
+          onReady: function (event) {
+            event.target.mute();
+            event.target.playVideo();
+            if (poster) poster.style.opacity = '0';
+          },
+          onStateChange: function (event) {
+            if (event.data === YT.PlayerState.PLAYING && poster) {
+              poster.style.opacity = '0';
+            }
+          }
+        }
+      });
+    }
+
+    if (window.YT && window.YT.Player) {
+      mountPlayer();
+      return;
+    }
+
+    var existing = document.getElementById('youtube-iframe-api');
+    if (!existing) {
+      var tag = document.createElement('script');
+      tag.id = 'youtube-iframe-api';
+      tag.src = 'https://www.youtube.com/iframe_api';
+      document.head.appendChild(tag);
+    }
+
+    var priorReady = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = function () {
+      if (typeof priorReady === 'function') priorReady();
+      mountPlayer();
+    };
   }
 
   function initReveal() {
