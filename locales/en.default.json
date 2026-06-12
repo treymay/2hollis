@@ -54,5 +54,15 @@
     "modal_eyebrow": "Newsletter",
     "modal_heading": "Sign Up",
     "modal_text": "Tour announcements. New music. Exclusive merch."
+  },
+  "contact": {
+    "name": "Name",
+    "email": "Email",
+    "inquiry": "Inquiry type",
+    "inquiry_general": "General",
+    "inquiry_booking": "Booking / Live",
+    "inquiry_press": "Press / Media",
+    "inquiry_merch": "Merch / Orders",
+    "message": "Message"
   }
 }

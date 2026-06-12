@@ -1,0 +1,163 @@
+<section class="contact" data-reveal>
+  <div class="contact__grid">
+    <div class="contact__info">
+      {%- if section.settings.info_heading != blank -%}
+        <h2 class="contact__heading type-headline">{{ section.settings.info_heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.info_text != blank -%}
+        <p class="contact__text">{{ section.settings.info_text }}</p>
+      {%- endif -%}
+
+      <ul class="contact__channels">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'channel' -%}
+            <li class="contact__channel" {{ block.shopify_attributes }}>
+              <p class="type-label contact__channel-label">{{ block.settings.label }}</p>
+              {%- if block.settings.email != blank -%}
+                <a href="mailto:{{ block.settings.email }}" class="contact__channel-value">{{ block.settings.email }}</a>
+              {%- elsif block.settings.text != blank -%}
+                <p class="contact__channel-value">{{ block.settings.text }}</p>
+              {%- endif -%}
+              {%- if block.settings.note != blank -%}
+                <p class="contact__channel-note">{{ block.settings.note }}</p>
+              {%- endif -%}
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+
+      {%- if section.settings.show_social -%}
+        <div class="contact__social">
+          <p class="type-label contact__social-label">{{ section.settings.social_heading }}</p>
+          <div class="contact__social-links">
+            {%- if settings.social_instagram != blank -%}
+              <a href="{{ settings.social_instagram }}" target="_blank" rel="noopener">Instagram</a>
+            {%- endif -%}
+            {%- if settings.social_tiktok != blank -%}
+              <a href="{{ settings.social_tiktok }}" target="_blank" rel="noopener">TikTok</a>
+            {%- endif -%}
+            {%- if settings.social_youtube != blank -%}
+              <a href="{{ settings.social_youtube }}" target="_blank" rel="noopener">YouTube</a>
+            {%- endif -%}
+            {%- if settings.social_spotify != blank -%}
+              <a href="{{ settings.social_spotify }}" target="_blank" rel="noopener">Spotify</a>
+            {%- endif -%}
+            {%- if settings.social_discord != blank -%}
+              <a href="{{ settings.social_discord }}" target="_blank" rel="noopener">Discord</a>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="contact__form-wrap">
+      <p class="type-label">{{ section.settings.form_eyebrow }}</p>
+      <h2 class="contact__form-title type-headline">{{ section.settings.form_heading }}</h2>
+
+      {%- capture contact_form_id -%}ContactForm-{{ section.id }}{%- endcapture -%}
+      {%- form 'contact', id: contact_form_id, class: 'contact-form' -%}
+        {%- if form.posted_successfully? -%}
+          <p class="contact-form__message contact-form__message--success" role="status">
+            {{ section.settings.success_message }}
+          </p>
+        {%- else -%}
+          {%- if form.errors -%}
+            <div class="contact-form__message contact-form__message--error" role="alert">
+              {{ form.errors | default_errors }}
+            </div>
+          {%- endif -%}
+
+          <div class="contact-form__field">
+            <label class="type-label" for="ContactName-{{ section.id }}">{{ 'contact.name' | t }}</label>
+            <input
+              type="text"
+              id="ContactName-{{ section.id }}"
+              name="contact[name]"
+              class="contact-form__input"
+              value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+              autocomplete="name"
+              required
+            >
+          </div>
+
+          <div class="contact-form__field">
+            <label class="type-label" for="ContactEmail-{{ section.id }}">{{ 'contact.email' | t }}</label>
+            <input
+              type="email"
+              id="ContactEmail-{{ section.id }}"
+              name="contact[email]"
+              class="contact-form__input"
+              value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+              autocomplete="email"
+              required
+              {% if form.errors %}aria-invalid="true"{% endif %}
+            >
+          </div>
+
+          <div class="contact-form__field">
+            <label class="type-label" for="ContactInquiry-{{ section.id }}">{{ 'contact.inquiry' | t }}</label>
+            <select id="ContactInquiry-{{ section.id }}" name="contact[Inquiry type]" class="contact-form__select">
+              <option value="General">{{ 'contact.inquiry_general' | t }}</option>
+              <option value="Booking">{{ 'contact.inquiry_booking' | t }}</option>
+              <option value="Press">{{ 'contact.inquiry_press' | t }}</option>
+              <option value="Merch">{{ 'contact.inquiry_merch' | t }}</option>
+            </select>
+          </div>
+
+          <div class="contact-form__field">
+            <label class="type-label" for="ContactBody-{{ section.id }}">{{ 'contact.message' | t }}</label>
+            <textarea
+              id="ContactBody-{{ section.id }}"
+              name="contact[body]"
+              class="contact-form__textarea"
+              rows="6"
+              required
+            >{{- form.body -}}</textarea>
+          </div>
+
+          <button type="submit" class="contact-form__submit type-nav">{{ section.settings.button_label }}</button>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact Page",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "info_heading", "label": "Info heading", "default": "Reach Out" },
+    {
+      "type": "textarea",
+      "id": "info_text",
+      "label": "Info text",
+      "default": "For booking, press, and general inquiries. We aim to respond within 3–5 business days."
+    },
+    { "type": "checkbox", "id": "show_social", "label": "Show social links", "default": true },
+    { "type": "text", "id": "social_heading", "label": "Social heading", "default": "Follow" },
+    { "type": "text", "id": "form_eyebrow", "label": "Form eyebrow", "default": "Send a Message" },
+    { "type": "text", "id": "form_heading", "label": "Form heading", "default": "Contact Form" },
+    { "type": "text", "id": "button_label", "label": "Submit label", "default": "Send" },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Thanks — your message was sent."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "channel",
+      "name": "Contact channel",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Booking" },
+        { "type": "text", "id": "email", "label": "Email" },
+        { "type": "text", "id": "text", "label": "Text (if no email)" },
+        { "type": "text", "id": "note", "label": "Note" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Contact Page" }]
+}
+{% endschema %}

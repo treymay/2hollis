@@ -809,6 +809,111 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .collection-page__empty { text-align: center; padding: 4rem; opacity: 0.4; }
 
+/* Contact */
+.contact {
+  padding: var(--pad) clamp(1.25rem, 4vw, 3rem);
+  background: var(--black);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.contact__grid {
+  display: grid;
+  gap: 3.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+}
+.contact__heading { font-size: clamp(2rem, 6vw, 3.5rem); }
+.contact__text {
+  margin-top: 1.25rem;
+  opacity: 0.35;
+  font-size: 13px;
+  line-height: 1.75;
+  max-width: 420px;
+}
+.contact__channels {
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.contact__channel + .contact__channel {
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.contact__channel-label { opacity: 0.35; margin-bottom: 0.5rem; }
+.contact__channel-value {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  opacity: 0.75;
+  transition: opacity 0.35s;
+}
+a.contact__channel-value:hover { opacity: 1; }
+.contact__channel-note {
+  margin: 0.45rem 0 0;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  opacity: 0.3;
+}
+.contact__social { margin-top: 2.5rem; }
+.contact__social-label { opacity: 0.35; margin-bottom: 1rem; }
+.contact__social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 1.75rem;
+}
+.contact__social-links a {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  transition: opacity 0.35s;
+}
+.contact__social-links a:hover { opacity: 1; }
+.contact__form-title { margin-top: 1rem; font-size: clamp(1.8rem, 5vw, 3rem); }
+.contact-form { margin-top: 2rem; }
+.contact-form__field + .contact-form__field { margin-top: 1.25rem; }
+.contact-form__field .type-label { display: block; opacity: 0.35; margin-bottom: 0.5rem; }
+.contact-form__input,
+.contact-form__select,
+.contact-form__textarea {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--white);
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+.contact-form__input:focus,
+.contact-form__select:focus,
+.contact-form__textarea:focus { outline: none; border-color: rgba(255,255,255,0.28); }
+.contact-form__select { text-transform: uppercase; font-size: 11px; letter-spacing: 0.12em; }
+.contact-form__textarea { resize: vertical; min-height: 140px; line-height: 1.6; }
+.contact-form__submit {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1.1rem;
+  background: var(--white);
+  color: var(--black);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 10px;
+  transition: opacity 0.35s;
+}
+.contact-form__submit:hover { opacity: 0.72; }
+.contact-form__message {
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+.contact-form__message--error { opacity: 0.75; }
+.contact-form__message--success { opacity: 0.55; }
+
 /* Product */
 .product {
   display: grid;
@@ -885,6 +990,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   .music__tracklist { columns: 2; }
   .tour-info__grid { grid-template-columns: 1fr 1fr; }
   .video-featured__grid { grid-template-columns: 1.4fr 1fr; }
+  .contact__grid { grid-template-columns: 1fr 1.1fr; }
   .shop-page__featured-grid { grid-template-columns: repeat(3, 1fr); }
   .newsletter-bar__inner { grid-template-columns: 1fr minmax(280px, 420px) auto; }
   .newsletter-bar__form { justify-self: stretch; }

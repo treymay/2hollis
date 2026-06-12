@@ -1,0 +1,70 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "eyebrow": "2HOLLIS",
+        "heading": "Contact",
+        "description": "Booking, press, partnerships, and general inquiries. Use the form or reach out directly below."
+      }
+    },
+    "main": {
+      "type": "contact-page",
+      "settings": {
+        "info_heading": "Reach Out",
+        "info_text": "For live booking, press, and general questions. We typically respond within 3–5 business days.",
+        "show_social": true,
+        "social_heading": "Follow",
+        "form_eyebrow": "Send a Message",
+        "form_heading": "Contact Form",
+        "button_label": "Send",
+        "success_message": "Thanks — your message was sent. We'll get back to you soon."
+      },
+      "blocks": {
+        "booking": {
+          "type": "channel",
+          "settings": {
+            "label": "Booking / Live",
+            "text": "Use the form — select Booking",
+            "note": "Include date, city, venue, and capacity."
+          }
+        },
+        "press": {
+          "type": "channel",
+          "settings": {
+            "label": "Press / Media",
+            "text": "Use the form — select Press",
+            "note": "Press kits, interviews, and photo requests."
+          }
+        },
+        "merch": {
+          "type": "channel",
+          "settings": {
+            "label": "Merch / Orders",
+            "text": "Use the form — select Merch",
+            "note": "Order help, sizing, and shipping questions."
+          }
+        },
+        "general": {
+          "type": "channel",
+          "settings": {
+            "label": "General",
+            "text": "Use the form — select General",
+            "note": "Everything else."
+          }
+        }
+      },
+      "block_order": ["booking", "press", "merch", "general"]
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "eyebrow": "Stay Connected",
+        "heading": "Newsletter",
+        "text": "Tour dates, new music, and merch drops.",
+        "button_label": "Join"
+      }
+    }
+  },
+  "order": ["hero", "main", "newsletter"]
+}
