@@ -1,0 +1,6 @@
+# Shopify ignores these when uploading the theme
+.DS_Store
+README.md
+.git/
+.gitignore
+*.md

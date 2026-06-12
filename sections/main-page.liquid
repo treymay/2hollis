@@ -1,0 +1,10 @@
+<div class="page-shell">
+  <div style="padding:calc(var(--header-h) + 4rem) clamp(1.25rem,4vw,3rem) var(--pad);max-width:680px;margin:0 auto;">
+    <h1 class="type-headline" style="font-size:clamp(2rem,6vw,3.5rem);">{{ page.title | upcase }}</h1>
+    <div style="margin-top:2rem;opacity:0.55;font-size:14px;line-height:1.8;">{{ page.content }}</div>
+  </div>
+</div>
+
+{% schema %}
+{ "name": "Page", "tag": "section", "settings": [] }
+{% endschema %}

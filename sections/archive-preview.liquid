@@ -1,0 +1,59 @@
+<section class="archive" data-reveal id="archive-{{ section.id }}">
+  <div class="section-intro">
+    <p class="type-label">{{ section.settings.eyebrow }}</p>
+    <h2 class="type-headline" style="margin-top:1rem;">{{ section.settings.heading }}</h2>
+    {%- if section.settings.description != blank -%}
+      <p class="type-label" style="margin-top:1.5rem;opacity:0.35;max-width:520px;margin-inline:auto;">{{ section.settings.description }}</p>
+    {%- endif -%}
+  </div>
+
+  <div class="archive__grid">
+    {%- for block in section.blocks -%}
+      <div class="archive__cell" {{ block.shopify_attributes }}>
+        {%- if block.settings.image != blank -%}
+          {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '400,600,800', sizes: '(min-width:768px) 25vw, 50vw', alt: block.settings.label }}
+        {%- elsif block.settings.image_url != blank -%}
+          <img src="{{ block.settings.image_url }}" alt="{{ block.settings.label | escape }}" width="800" height="800" loading="lazy">
+        {%- endif -%}
+        {%- if block.settings.label != blank -%}<span class="archive__tag">{{ block.settings.label }}</span>{%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+
+  {%- if section.settings.archive_link != blank -%}
+    <div style="text-align:center;margin-top:3.5rem;">
+      <a href="{{ section.settings.archive_link }}" class="text-link">{{ section.settings.link_label }}</a>
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Archive Preview",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Lore" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Archive" },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Tour photography. Posters. Flyers. Behind-the-scenes. Unreleased visuals."
+    },
+    { "type": "text", "id": "archive_link", "label": "Full archive link", "default": "/pages/archive", "info": "Relative path or full URL" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "Enter Archive" }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "image_url", "label": "Image URL" },
+        { "type": "text", "id": "label", "label": "Label", "default": "BTS" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Archive Preview" }]
+}
+{% endschema %}

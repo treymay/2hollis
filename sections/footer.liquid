@@ -1,0 +1,18 @@
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__links">
+      {% if settings.social_instagram != blank %}<a href="{{ settings.social_instagram }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
+      {% if settings.social_tiktok != blank %}<a href="{{ settings.social_tiktok }}" target="_blank" rel="noopener">TikTok</a>{% endif %}
+      {% if settings.social_youtube != blank %}<a href="{{ settings.social_youtube }}" target="_blank" rel="noopener">YouTube</a>{% endif %}
+      {% if settings.social_spotify != blank %}<a href="{{ settings.social_spotify }}" target="_blank" rel="noopener">Spotify</a>{% endif %}
+      {% if settings.social_discord != blank %}<a href="{{ settings.social_discord }}" target="_blank" rel="noopener">Discord</a>{% endif %}
+      {% if settings.newsletter_url != blank %}<a href="{{ settings.newsletter_url }}" target="_blank" rel="noopener">Newsletter</a>{% endif %}
+      {% if settings.tour_vip_url != blank %}<a href="{{ settings.tour_vip_url }}" target="_blank" rel="noopener">VIP</a>{% endif %}
+    </div>
+    <p class="site-footer__legal">&copy; {{ 'now' | date: '%Y' }} 2HOLLIS &middot; {{ settings.artist_bio }}</p>
+  </div>
+</footer>
+
+{% schema %}
+{ "name": "Footer", "settings": [] }
+{% endschema %}

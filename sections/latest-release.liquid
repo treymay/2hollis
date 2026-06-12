@@ -1,0 +1,62 @@
+<section class="release" data-reveal id="release-{{ section.id }}">
+  <div class="release__grid">
+    <div class="release__art">
+      {%- if section.settings.artwork != blank -%}
+        {{ section.settings.artwork | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '520, 800, 1200', sizes: '(min-width:768px) 40vw, 88vw', alt: section.settings.title }}
+      {%- elsif section.settings.artwork_url != blank -%}
+        <img src="{{ section.settings.artwork_url }}" alt="{{ section.settings.title | escape }}" width="520" height="520" loading="lazy">
+      {%- endif -%}
+    </div>
+
+    <div class="release__body">
+      <p class="type-label">{{ section.settings.eyebrow }}</p>
+      <h2 class="type-headline">{{ section.settings.title }}</h2>
+      <p class="type-label release__meta">{{ section.settings.subtitle }}</p>
+      {%- if section.settings.description != blank -%}
+        <p style="margin-top:1.5rem;opacity:0.35;font-size:13px;max-width:420px;line-height:1.7;">{{ section.settings.description }}</p>
+      {%- endif -%}
+
+      <div class="release__links">
+        {%- if section.settings.stream_url != blank -%}
+          <a href="{{ section.settings.stream_url }}" class="text-link" target="_blank" rel="noopener">{{ section.settings.cta_label }}</a>
+        {%- endif -%}
+        {%- if section.settings.spotify_url != blank -%}
+          <a href="{{ section.settings.spotify_url }}" class="text-link" target="_blank" rel="noopener">Spotify</a>
+        {%- endif -%}
+        {%- if section.settings.apple_url != blank -%}
+          <a href="{{ section.settings.apple_url }}" class="text-link" target="_blank" rel="noopener">Apple Music</a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Latest Release",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Latest Project" },
+    { "type": "text", "id": "title", "label": "Title", "default": "STAR" },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Album — April 4, 2025 · Interscope Records" },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Fourth studio album. EDM, hyperpop, electropop. Featuring Afraid, Style, Flash."
+    },
+    { "type": "image_picker", "id": "artwork", "label": "Artwork" },
+    {
+      "type": "text",
+      "id": "artwork_url",
+      "label": "Artwork URL",
+      "default": "https://www.2hollis.life/wp-content/uploads/sites/2747/2025/02/04Th649731d14-1440x1440.png"
+    },
+    { "type": "url", "id": "stream_url", "label": "Stream link" },
+    { "type": "text", "id": "cta_label", "label": "Primary CTA", "default": "Stream Now" },
+    { "type": "url", "id": "spotify_url", "label": "Spotify link" },
+    { "type": "url", "id": "apple_url", "label": "Apple Music link" }
+  ],
+  "presets": [{ "name": "Latest Release" }]
+}
+{% endschema %}

@@ -1,0 +1,70 @@
+<section class="merch" data-reveal id="merch-{{ section.id }}">
+  <div class="merch__head">
+    <p class="type-label">{{ section.settings.eyebrow }}</p>
+    <a href="{{ section.settings.shop_link | default: routes.all_products_collection_url }}" class="type-label" style="opacity:0.4;">{{ section.settings.view_all }}</a>
+  </div>
+
+  <div>
+    {%- assign collection = section.settings.collection -%}
+    {%- if collection != blank and collection.products_count > 0 -%}
+      {%- for product in collection.products limit: section.settings.limit -%}
+        <a href="{{ product.url }}" class="merch__card">
+          <div class="merch__img">
+            {%- if product.featured_image -%}
+              {{ product.featured_image | image_url: width: 1600 | image_tag: loading: 'lazy', widths: '800,1200,1600', sizes: '100vw', alt: product.title }}
+            {%- endif -%}
+          </div>
+          <div class="merch__info">
+            <span class="merch__name">{{ product.title | upcase }}</span>
+            <span class="merch__price">{{ product.price | money_without_trailing_zeros }}</span>
+          </div>
+        </a>
+      {%- endfor -%}
+    {%- else -%}
+      {%- for block in section.blocks -%}
+        <a href="{% if block.settings.link != blank %}{{ block.settings.link }}{% else %}/products/{{ block.settings.handle }}{% endif %}" class="merch__card" {{ block.shopify_attributes }}>
+          <div class="merch__img">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 1600 | image_tag: loading: 'lazy', alt: block.settings.title }}
+            {%- elsif block.settings.image_url != blank -%}
+              <img src="{{ block.settings.image_url }}" alt="{{ block.settings.title | escape }}" width="1600" height="1000" loading="lazy">
+            {%- endif -%}
+          </div>
+          <div class="merch__info">
+            <span class="merch__name">{{ block.settings.title }}</span>
+            <span class="merch__price">{{ block.settings.price }}</span>
+          </div>
+        </a>
+      {%- endfor -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Editorial Merch",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Shop" },
+    { "type": "collection", "id": "collection", "label": "Collection (overrides blocks)" },
+    { "type": "range", "id": "limit", "label": "Products to show", "min": 4, "max": 16, "step": 1, "default": 8 },
+    { "type": "url", "id": "shop_link", "label": "View all link" },
+    { "type": "text", "id": "view_all", "label": "View all label", "default": "View All" }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        { "type": "text", "id": "handle", "label": "Product handle" },
+        { "type": "text", "id": "title", "label": "Title", "default": "HOODIE" },
+        { "type": "text", "id": "price", "label": "Price", "default": "$90" },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "image_url", "label": "Image URL" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Editorial Merch" }]
+}
+{% endschema %}

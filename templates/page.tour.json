@@ -1,0 +1,44 @@
+{
+  "sections": {
+    "main": {
+      "type": "tour-dates",
+      "settings": {
+        "eyebrow": "The Star Tour",
+        "heading": "2026",
+        "subheading": "Headline dates · Festivals · VIP available",
+        "all_dates_link": "https://www.2hollis.life/tour/",
+        "all_dates_label": "Official Tour Page",
+        "vip_link": "https://www.2hollis.life/star-tour/",
+        "vip_label": "VIP Experience"
+      },
+      "blocks": {
+        "d1": { "type": "date", "settings": { "city": "AUCKLAND", "date": "FEB 18 2026", "venue": "Spark Arena · The Star Tour" } },
+        "d2": { "type": "date", "settings": { "city": "SYDNEY", "date": "FEB 2026", "venue": "Laneway Festival" } },
+        "d3": { "type": "date", "settings": { "city": "MELBOURNE", "date": "FEB 2026", "venue": "Laneway Festival" } },
+        "d4": { "type": "date", "settings": { "city": "SAN ANTONIO", "date": "MAR 06 2026", "venue": "Aztec Theatre", "ticket_url": "https://www.ticketmaster.com/" } },
+        "d5": { "type": "date", "settings": { "city": "MEXICO CITY", "date": "MAR 26 2026", "venue": "Velodromo" } },
+        "d6": { "type": "date", "settings": { "city": "NEW YORK", "date": "JUN 05 2026", "venue": "Governors Ball · Flushing Meadows" } },
+        "d7": { "type": "date", "settings": { "city": "CHICAGO", "date": "JUN 12 2026", "venue": "SeatGeek Stadium" } },
+        "d8": { "type": "date", "settings": { "city": "CHICAGO", "date": "JUN 13 2026", "venue": "SeatGeek Stadium" } },
+        "d9": { "type": "date", "settings": { "city": "LOS ANGELES", "date": "AUG 02 2026", "venue": "Hollywood Park · Inglewood" } },
+        "d10": { "type": "date", "settings": { "city": "NETHERLANDS", "date": "AUG 21 2026", "venue": "Lowlands Festival" } },
+        "d11": { "type": "date", "settings": { "city": "FINLAND", "date": "AUG 21 2026", "venue": "Blockfest · Tampere" } },
+        "d12": { "type": "date", "settings": { "city": "LONDON", "date": "AUG 22 2026", "venue": "All Points East · Victoria Park" } },
+        "d13": { "type": "date", "settings": { "city": "PARIS", "date": "SUMMER 2026", "venue": "TBA" } },
+        "d14": { "type": "date", "settings": { "city": "BERLIN", "date": "SUMMER 2026", "venue": "TBA" } }
+      },
+      "block_order": ["d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "d10", "d11", "d12", "d13", "d14"]
+    },
+    "vip": {
+      "type": "newsletter",
+      "settings": {
+        "eyebrow": "VIP",
+        "heading": "Star VIP Experience",
+        "text": "Meet & greet · Exclusive merch pack · Signed laminate · First entry · First access merch shopping.",
+        "link": "https://www.2hollis.life/star-tour/",
+        "link_label": "VIP Info"
+      }
+    }
+  },
+  "order": ["main", "vip"]
+}

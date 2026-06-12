@@ -1,0 +1,32 @@
+<div class="page-shell">
+  <div style="padding:calc(var(--header-h) + 3rem) clamp(1.25rem,4vw,3rem) 1rem;">
+    <p class="type-label">Shop</p>
+    <h1 class="type-headline" style="margin-top:1rem;font-size:clamp(2rem,6vw,3.5rem);">Collections</h1>
+  </div>
+
+  <div class="shop-grid">
+    {%- for collection in collections -%}
+      {%- unless collection.handle == 'frontpage' -%}
+        <a href="{{ collection.url }}" class="shop-card">
+          <div class="shop-card__img">
+            {%- if collection.featured_image -%}
+              {{ collection.featured_image | image_url: width: 800 | image_tag: loading: 'lazy', alt: collection.title }}
+            {%- endif -%}
+          </div>
+          <div class="shop-card__info">
+            <span class="shop-card__title">{{ collection.title | upcase }}</span>
+          </div>
+        </a>
+      {%- endunless -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collections list",
+  "tag": "section",
+  "class": "section-list-collections",
+  "settings": []
+}
+{% endschema %}

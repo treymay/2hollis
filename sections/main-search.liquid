@@ -1,0 +1,53 @@
+<div class="page-shell">
+  <div style="padding:calc(var(--header-h) + 3rem) clamp(1.25rem,4vw,3rem) 1rem;">
+    <p class="type-label">Search</p>
+    <h1 class="type-headline" style="margin-top:1rem;font-size:clamp(2rem,6vw,3.5rem);">
+      {%- if search.performed -%}Results{%- else -%}Search{%- endif -%}
+    </h1>
+  </div>
+
+  <div style="padding:0 clamp(1.25rem,4vw,3rem) 2rem;max-width:480px;margin:0 auto;">
+    <form action="{{ routes.search_url }}" method="get" role="search">
+      <input
+        type="search"
+        name="q"
+        value="{{ search.terms | escape }}"
+        placeholder="Search"
+        style="width:100%;padding:0.85rem 1rem;background:#111;border:1px solid rgba(255,255,255,0.12);color:#fff;letter-spacing:0.1em;font-size:12px;"
+      >
+    </form>
+  </div>
+
+  {%- if search.performed -%}
+    {%- if search.results_count == 0 -%}
+      <p class="type-label" style="text-align:center;padding:3rem;opacity:0.4;">No results for &ldquo;{{ search.terms }}&rdquo;</p>
+    {%- else -%}
+      <div class="shop-grid">
+        {%- for item in search.results -%}
+          {%- if item.object_type == 'product' -%}
+            <a href="{{ item.url }}" class="shop-card">
+              <div class="shop-card__img">
+                {%- if item.featured_image -%}
+                  {{ item.featured_image | image_url: width: 800 | image_tag: loading: 'lazy', alt: item.title }}
+                {%- endif -%}
+              </div>
+              <div class="shop-card__info">
+                <span class="shop-card__title">{{ item.title | upcase }}</span>
+                <span class="shop-card__price">{{ item.price | money_without_trailing_zeros }}</span>
+              </div>
+            </a>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Search",
+  "tag": "section",
+  "class": "section-search",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+
+  <title>
+    {{ page_title }}
+    {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+  </title>
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% else %}
+    <meta name="description" content="{{ settings.artist_bio | escape }}">
+  {% endif %}
+
+  {% render 'meta-tags' %}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&display=swap" rel="stylesheet">
+
+  {{ content_for_header }}
+  {{ 'base.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'theme.js' | asset_url }}" defer></script>
+
+  {% if settings.favicon %}
+    <link rel="icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+  {% endif %}
+</head>
+<body class="template-{{ template.name | handle }}">
+  <a class="visually-hidden" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+  {% section 'header' %}
+  <main id="MainContent" role="main">{{ content_for_layout }}</main>
+  {% section 'footer' %}
+</body>
+</html>

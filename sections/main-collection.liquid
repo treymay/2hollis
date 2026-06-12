@@ -1,0 +1,32 @@
+<div class="page-shell">
+  <div style="padding:calc(var(--header-h) + 3rem) clamp(1.25rem,4vw,3rem) 1rem;">
+    <p class="type-label">Shop</p>
+    <h1 class="type-headline" style="margin-top:1rem;font-size:clamp(2.2rem,7vw,4.5rem);">{{ collection.title }}</h1>
+  </div>
+
+  {%- paginate collection.products by 24 -%}
+    {%- if collection.products.size == 0 -%}
+      <p class="type-label" style="text-align:center;padding:4rem;opacity:0.4;">{{ 'collections.general.no_matches' | t }}</p>
+    {%- else -%}
+      <div class="shop-grid">
+        {%- for product in collection.products -%}
+          <a href="{{ product.url }}" class="shop-card">
+            <div class="shop-card__img">
+              {%- if product.featured_image -%}
+                {{ product.featured_image | image_url: width: 800 | image_tag: loading: 'lazy', alt: product.title }}
+              {%- endif -%}
+            </div>
+            <div class="shop-card__info">
+              <span class="shop-card__title">{{ product.title | upcase }}</span>
+              <span class="shop-card__price">{{ product.price | money_without_trailing_zeros }}</span>
+            </div>
+          </a>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  {%- endpaginate -%}
+</div>
+
+{% schema %}
+{ "name": "Collection", "tag": "section", "settings": [] }
+{% endschema %}

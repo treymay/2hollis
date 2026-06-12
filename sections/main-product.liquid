@@ -1,0 +1,38 @@
+<div class="page-shell">
+  <div class="product">
+    <div class="product__gallery">
+      {%- if product.featured_image -%}
+        {{ product.featured_image | image_url: width: 1200 | image_tag: loading: 'eager', alt: product.title }}
+      {%- endif -%}
+    </div>
+    <div>
+      <h1 class="product__title">{{ product.title | upcase }}</h1>
+      <p class="product__price">{{ product.price | money_without_trailing_zeros }}</p>
+
+      {%- form 'product', product -%}
+        {%- unless product.has_only_default_variant -%}
+          {%- for option in product.options_with_values -%}
+            <label class="type-label" style="display:block;margin-bottom:0.5rem;opacity:0.45;">{{ option.name }}</label>
+            <select class="product__select" name="options[{{ option.name | escape }}]">
+              {%- for value in option.values -%}
+                <option value="{{ value | escape }}" {% if option.selected_value == value %}selected{% endif %}>{{ value }}</option>
+              {%- endfor -%}
+            </select>
+          {%- endfor -%}
+        {%- endunless -%}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <button type="submit" name="add" class="product__submit" {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}>
+          {%- if product.available -%}{{ 'products.product.add_to_cart' | t }}{%- else -%}{{ 'products.product.sold_out' | t }}{%- endif -%}
+        </button>
+      {%- endform -%}
+
+      {%- if product.description != blank -%}
+        <div class="product__desc">{{ product.description }}</div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{ "name": "Product", "tag": "section", "settings": [] }
+{% endschema %}

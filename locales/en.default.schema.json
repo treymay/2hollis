@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "header": { "name": "Header" },
+    "footer": { "name": "Footer" },
+    "hero-video": { "name": "Hero Video" },
+    "latest-release": { "name": "Latest Release" },
+    "tour-dates": { "name": "Tour Dates" },
+    "editorial-merch": { "name": "Editorial Merch" },
+    "archive-preview": { "name": "Archive Preview" },
+    "newsletter": { "name": "Newsletter" },
+    "music-page": { "name": "Music Page" },
+    "archive-gallery": { "name": "Archive Gallery" },
+    "videos": { "name": "Videos" },
+    "main-collection": { "name": "Collection" },
+    "main-product": { "name": "Product" },
+    "main-cart": { "name": "Cart" },
+    "main-page": { "name": "Page" },
+    "main-404": { "name": "404" },
+    "main-search": { "name": "Search" },
+    "main-list-collections": { "name": "Collections list" }
+  },
+  "settings_schema": {
+    "brand": { "name": "Brand" },
+    "stream_links": { "name": "Stream links" },
+    "social": { "name": "Social" },
+    "tour": { "name": "Tour" }
+  }
+}
