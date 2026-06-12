@@ -4,8 +4,7 @@
       "type": "hero-video",
       "settings": {
         "youtube_id": "nnzndZQX3SU",
-        "poster_url": "https://www.2hollis.life/wp-content/uploads/sites/2747/2025/02/og2h-compressed.jpg",
-        "overlay_text": "STAR"
+        "poster_url": "https://www.2hollis.life/wp-content/uploads/sites/2747/2025/02/og2h-compressed.jpg"
       }
     },
     "release": {
@@ -34,130 +33,73 @@
         "vip_label": "VIP Experience"
       },
       "blocks": {
-        "d1": { "type": "date", "settings": { "city": "AUCKLAND", "date": "FEB 18 2026", "venue": "Spark Arena" } },
-        "d2": { "type": "date", "settings": { "city": "SYDNEY", "date": "FEB 2026", "venue": "Laneway Festival" } },
-        "d3": { "type": "date", "settings": { "city": "MELBOURNE", "date": "FEB 2026", "venue": "Laneway Festival" } },
-        "d4": { "type": "date", "settings": { "city": "SAN ANTONIO", "date": "MAR 06 2026", "venue": "Aztec Theatre" } },
-        "d5": { "type": "date", "settings": { "city": "MEXICO CITY", "date": "MAR 26 2026", "venue": "Velodromo" } },
-        "d6": { "type": "date", "settings": { "city": "NEW YORK", "date": "JUN 05 2026", "venue": "Governors Ball" } },
-        "d7": { "type": "date", "settings": { "city": "CHICAGO", "date": "JUN 12 2026", "venue": "SeatGeek Stadium" } },
-        "d8": { "type": "date", "settings": { "city": "LOS ANGELES", "date": "AUG 02 2026", "venue": "Hollywood Park" } },
-        "d9": { "type": "date", "settings": { "city": "LONDON", "date": "AUG 22 2026", "venue": "All Points East" } },
-        "d10": { "type": "date", "settings": { "city": "PARIS", "date": "SUMMER 2026", "venue": "TBA" } }
-      },
-      "block_order": ["d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "d10"]
-    },
-    "merch": {
-      "type": "editorial-merch",
-      "settings": {
-        "eyebrow": "Shop",
-        "limit": 8,
-        "view_all": "View All"
-      },
-      "blocks": {
-        "p1": {
-          "type": "product",
+        "d1": {
+          "type": "date",
           "settings": {
-            "handle": "white-horse-star-zip-up-hoodie",
-            "title": "WHITE HORSE STAR ZIP-UP HOODIE",
-            "price": "$215",
-            "image_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/whitehoodiefront.png?v=1762180534",
-            "link": "/products/white-horse-star-zip-up-hoodie"
+            "city": "CHICAGO",
+            "date": "JUN 12 2026",
+            "venue": "SeatGeek Stadium",
+            "support": "Bridgeview, IL",
+            "ticket_url": "https://www.ticketmaster.com/2hollis-tickets/artist/3063351",
+            "ticket_label": "TICKETS"
           }
         },
-        "p2": {
-          "type": "product",
+        "d2": {
+          "type": "date",
           "settings": {
-            "handle": "tiger-print-logo-white-hoodie",
-            "title": "TIGER PRINT LOGO WHITE HOODIE",
-            "price": "$150",
-            "image_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/2HOLLIS_Tiger_Print_Logo_White_Hoodie_1_FRONT.png?v=1775233399",
-            "link": "/products/tiger-print-logo-white-hoodie"
+            "city": "CHICAGO",
+            "date": "JUN 13 2026",
+            "venue": "SeatGeek Stadium",
+            "support": "Bridgeview, IL",
+            "ticket_url": "https://www.ticketmaster.com/2hollis-tickets/artist/3063351",
+            "ticket_label": "TICKETS"
           }
         },
-        "p3": {
-          "type": "product",
+        "d3": {
+          "type": "date",
           "settings": {
-            "handle": "star-complexcon-t-shirt",
-            "title": "STAR COMPLEXCON T-SHIRT",
-            "price": "$70",
-            "image_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/whiteshirtfront.png?v=1762180562",
-            "link": "/products/star-complexcon-t-shirt"
+            "city": "LOS ANGELES",
+            "date": "AUG 02 2026",
+            "venue": "HARD Summer · Hollywood Park",
+            "support": "Inglewood, CA",
+            "ticket_url": "https://on.fgtix.com/trk/5oHm",
+            "ticket_label": "TICKETS"
           }
         },
-        "p4": {
-          "type": "product",
+        "d4": {
+          "type": "date",
           "settings": {
-            "handle": "star-hat",
-            "title": "STAR HAT",
-            "price": "$60",
-            "image_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/2Hollis_star_hat_1_front.png?v=1775233758",
-            "link": "/products/star-hat"
+            "city": "NETHERLANDS",
+            "date": "AUG 21 2026",
+            "venue": "Lowlands Festival",
+            "support": "Biddinghuizen",
+            "ticket_url": "https://lowlands.nl/en/tickets/",
+            "ticket_label": "TICKETS"
           }
         },
-        "p5": {
-          "type": "product",
+        "d5": {
+          "type": "date",
           "settings": {
-            "handle": "star-anniversary-poster",
-            "title": "STAR ANNIVERSARY POSTER",
-            "price": "$22.22",
-            "image_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/5kx5k5mbs.png?v=1775249680",
-            "link": "/products/star-anniversary-poster"
+            "city": "FINLAND",
+            "date": "AUG 21 2026",
+            "venue": "Blockfest",
+            "support": "Tampere",
+            "ticket_url": "https://blockfest.fi/en/tickets/",
+            "ticket_label": "TICKETS"
           }
         },
-        "p6": {
-          "type": "product",
+        "d6": {
+          "type": "date",
           "settings": {
-            "handle": "22-22-zip-up-hoodie",
-            "title": "22 22 ZIP-UP HOODIE",
-            "price": "$100",
-            "image_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/VIEW_2HOLLIS_ECOM_2025_STAR_HORSE_WHITEZIPUP_FRONT.png?v=1746215364",
-            "link": "/products/22-22-zip-up-hoodie"
-          }
-        },
-        "p7": {
-          "type": "product",
-          "settings": {
-            "handle": "crest-pink-beanie",
-            "title": "CREST PINK BEANIE",
-            "price": "$35",
-            "image_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/2HOLLIS_Crest_Pink_Beanie_1_FRONT.png?v=1772288381",
-            "link": "/products/crest-pink-beanie"
-          }
-        },
-        "p8": {
-          "type": "product",
-          "settings": {
-            "handle": "star-digital-album",
-            "title": "STAR DIGITAL ALBUM",
-            "price": "$10",
-            "image_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/UMG_DigitalDownload_Template_2hollis.png?v=1744145851",
-            "link": "/products/star-digital-album"
+            "city": "LONDON",
+            "date": "AUG 22 2026",
+            "venue": "All Points East · Victoria Park",
+            "ticket_url": "https://www.bandsintown.com/t/1037174320",
+            "ticket_label": "TICKETS"
           }
         }
       },
-      "block_order": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"]
-    },
-    "archive": {
-      "type": "archive-preview",
-      "settings": {
-        "eyebrow": "Lore",
-        "heading": "Archive",
-        "description": "Tour photography. Posters. Flyers. Behind-the-scenes. Unreleased visuals.",
-        "archive_link": "/pages/archive",
-        "link_label": "Enter Archive"
-      },
-      "blocks": {
-        "a1": { "type": "image", "settings": { "label": "STAR", "image_url": "https://www.2hollis.life/wp-content/uploads/sites/2747/2025/02/04Th649731d14-900x900.png" } },
-        "a2": { "type": "image", "settings": { "label": "POSTER", "image_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/5kx5k5mbs.png?v=1775249680" } },
-        "a3": { "type": "image", "settings": { "label": "TOUR", "image_url": "https://www.2hollis.life/wp-content/uploads/sites/2747/2025/02/og2h-compressed.jpg" } },
-        "a4": { "type": "image", "settings": { "label": "MERCH", "image_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/whitehoodiefront.png?v=1762180534" } },
-        "a5": { "type": "image", "settings": { "label": "STUDIO", "image_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/2HOLLIS_Tiger_Print_Logo_White_Hoodie_1_FRONT.png?v=1775233399" } },
-        "a6": { "type": "image", "settings": { "label": "FANS", "image_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/whiteshirtfront.png?v=1762180562" } },
-        "a7": { "type": "image", "settings": { "label": "FLYER", "image_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/2Hollis_star_hat_1_front.png?v=1775233758" } },
-        "a8": { "type": "image", "settings": { "label": "BTS", "image_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/2hollis_ls_front.png?v=1764097929" } }
-      },
-      "block_order": ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8"]
+      "block_order": ["d1", "d2", "d3", "d4", "d5", "d6"]
     },
     "signup": {
       "type": "newsletter",
@@ -170,5 +112,5 @@
       }
     }
   },
-  "order": ["hero", "release", "tour", "merch", "archive", "signup"]
+  "order": ["hero", "release", "tour", "signup"]
 }

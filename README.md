@@ -5,7 +5,7 @@ Official video-first Shopify Online Store 2.0 theme for **2hollis**.
 ## Theme structure
 
 ```
-assets/          CSS + JavaScript
+assets/          CSS, JavaScript, logo
 config/          Theme settings
 layout/          theme.liquid, password.liquid
 locales/         Translations
@@ -35,19 +35,19 @@ shopify theme dev --store YOUR-STORE.myshopify.com
 2. Create pages and assign templates:
    - `music` → **page.music**
    - `tour` → **page.tour**
-   - `archive` → **page.archive**
+   - `video` → **page.video**
 3. **Customize → Hero Video** → upload your hero MP4 (optional; YouTube fallback included)
 
 ## Homepage sections
 
 | Section | Purpose |
 |---------|---------|
-| Hero Video | Fullscreen autoplay video |
+| Hero Video | Fullscreen video + white cross logo overlay |
 | Latest Release | STAR album |
-| Tour Dates | Star Tour 2026 |
-| Editorial Merch | Product cards |
-| Archive Preview | Lore grid |
+| Tour Dates | Upcoming Star Tour 2026 dates |
 | Newsletter | Sign-up CTA |
+
+Merch grid/carousel can be added in the theme editor when your products are connected.
 
 ## Templates included
 
@@ -55,7 +55,7 @@ shopify theme dev --store YOUR-STORE.myshopify.com
 - `collection.json` — Shop collection
 - `product.json` — Product page
 - `cart.json` — Cart
-- `page.music.json` — Discography + videos
-- `page.tour.json` — Full tour + VIP
-- `page.archive.json` — Archive gallery
+- `page.music.json` — Discography
+- `page.tour.json` — Laylo embed + full tour dates + VIP
+- `page.video.json` — Official music videos
 - `404.json`, `search.json`, `list-collections.json`

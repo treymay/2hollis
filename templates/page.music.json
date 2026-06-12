@@ -42,49 +42,7 @@
         }
       },
       "block_order": ["star", "boy", "singles"]
-    },
-    "videos": {
-      "type": "videos",
-      "settings": {
-        "eyebrow": "Visuals",
-        "heading": "Videos"
-      },
-      "blocks": {
-        "v1": {
-          "type": "video",
-          "settings": {
-            "title": "SPLASH",
-            "video_url": "https://www.youtube.com/watch?v=nnzndZQX3SU",
-            "thumbnail_url": "https://www.2hollis.life/wp-content/uploads/sites/2747/2025/02/og2h-compressed.jpg"
-          }
-        },
-        "v2": {
-          "type": "video",
-          "settings": {
-            "title": "AFRAID",
-            "video_url": "https://2hollis.lnk.to/afraid",
-            "thumbnail_url": "https://www.2hollis.life/wp-content/uploads/sites/2747/2025/02/04Th649731d14-900x900.png"
-          }
-        },
-        "v3": {
-          "type": "video",
-          "settings": {
-            "title": "FLASH",
-            "video_url": "https://www.youtube.com/@2hollis",
-            "thumbnail_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/5kx5k5mbs.png?v=1775249680"
-          }
-        },
-        "v4": {
-          "type": "video",
-          "settings": {
-            "title": "ALL VIDEOS",
-            "video_url": "https://www.2hollis.life/video/",
-            "thumbnail_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/whiteshirtfront.png?v=1762180562"
-          }
-        }
-      },
-      "block_order": ["v1", "v2", "v3", "v4"]
     }
   },
-  "order": ["main", "videos"]
+  "order": ["main"]
 }

@@ -1,11 +1,13 @@
 <header class="site-header type-nav" data-header>
-  <a href="{{ routes.root_url }}" class="site-header__logo">2HOLLIS</a>
+  <a href="{{ routes.root_url }}" class="site-header__logo" aria-label="2HOLLIS">
+    {% render 'logo', width: 26, class: 'site-logo site-logo--header' %}
+  </a>
 
   <nav class="site-header__nav" aria-label="Main">
     <a href="/pages/music">Music</a>
     <a href="{{ routes.all_products_collection_url }}">Shop</a>
     <a href="/pages/tour">Tour</a>
-    <a href="/pages/archive">Archive</a>
+    <a href="/pages/video">Video</a>
   </nav>
 
   <div class="site-header__actions">
@@ -23,7 +25,7 @@
   <a href="/pages/music">Music</a>
   <a href="{{ routes.all_products_collection_url }}">Shop</a>
   <a href="/pages/tour">Tour</a>
-  <a href="/pages/archive">Archive</a>
+  <a href="/pages/video">Video</a>
 </nav>
 
 {% schema %}

@@ -1,0 +1,51 @@
+{
+  "sections": {
+    "main": {
+      "type": "videos",
+      "settings": {
+        "full_page": true,
+        "eyebrow": "Visuals",
+        "heading": "Video"
+      },
+      "blocks": {
+        "v1": {
+          "type": "video",
+          "settings": {
+            "title": "2hollis Live at The Shrine — LA",
+            "video_url": "https://www.youtube.com/watch?v=QUcTkNzCO5k"
+          }
+        },
+        "v2": {
+          "type": "video",
+          "settings": {
+            "title": "flash (official video)",
+            "video_url": "https://www.youtube.com/watch?v=CjnFzPhM72I"
+          }
+        },
+        "v3": {
+          "type": "video",
+          "settings": {
+            "title": "nice (official visualizer)",
+            "video_url": "https://www.youtube.com/watch?v=nnzndZQX3SU"
+          }
+        },
+        "v4": {
+          "type": "video",
+          "settings": {
+            "title": "2hollis, nate sib — afraid (official video)",
+            "video_url": "https://www.youtube.com/watch?v=Dnmgy81Dh8A"
+          }
+        },
+        "v5": {
+          "type": "video",
+          "settings": {
+            "title": "gold (official video)",
+            "video_url": "https://www.youtube.com/watch?v=3X2TE2tjIf8"
+          }
+        }
+      },
+      "block_order": ["v1", "v2", "v3", "v4", "v5"]
+    }
+  },
+  "order": ["main"]
+}

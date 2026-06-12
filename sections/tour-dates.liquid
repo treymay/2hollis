@@ -1,16 +1,18 @@
-<section class="tour" data-reveal id="tour-{{ section.id }}">
-  <div class="section-intro">
-    <p class="type-label">{{ section.settings.eyebrow }}</p>
-    <h2 class="type-headline" style="margin-top:1rem;">{{ section.settings.heading }}</h2>
-    {%- if section.settings.subheading != blank -%}
-      <p class="type-label" style="margin-top:1rem;opacity:0.35;">{{ section.settings.subheading }}</p>
-    {%- endif -%}
-  </div>
+<section class="tour{% if section.settings.compact %} tour--compact{% endif %}" data-reveal id="tour-{{ section.id }}">
+  {%- unless section.settings.hide_header -%}
+    <div class="section-intro">
+      <p class="type-label">{{ section.settings.eyebrow }}</p>
+      <h2 class="type-headline" style="margin-top:1rem;">{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="type-label" style="margin-top:1rem;opacity:0.35;">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+  {%- endunless -%}
 
   <ul class="tour__list">
     {%- for block in section.blocks -%}
-      <li class="tour__row" {{ block.shopify_attributes }}>
-        {%- if block.settings.ticket_url != blank -%}
+      <li class="tour__row{% if block.settings.is_completed %} tour__row--past{% endif %}" {{ block.shopify_attributes }}>
+        {%- if block.settings.ticket_url != blank and block.settings.is_completed == false -%}
           <a href="{{ block.settings.ticket_url }}" class="tour__link" target="_blank" rel="noopener">
         {%- else -%}
           <div class="tour__link">
@@ -19,20 +21,30 @@
           <span class="tour__detail">
             <span class="tour__date">{{ block.settings.date }}</span>
             {%- if block.settings.venue != blank -%}<span class="tour__venue">{{ block.settings.venue }}</span>{%- endif -%}
+            {%- if block.settings.support != blank -%}<span class="tour__venue">{{ block.settings.support }}</span>{%- endif -%}
+            {%- if block.settings.is_completed -%}
+              <span class="tour__ticket tour__ticket--past">COMPLETED</span>
+            {%- elsif block.settings.ticket_url != blank -%}
+              <span class="tour__ticket">{{ block.settings.ticket_label | default: 'TICKETS' }}</span>
+            {%- elsif block.settings.ticket_label != blank -%}
+              <span class="tour__ticket">{{ block.settings.ticket_label }}</span>
+            {%- endif -%}
           </span>
-        {%- if block.settings.ticket_url != blank -%}</a>{%- else -%}</div>{%- endif -%}
+        {%- if block.settings.ticket_url != blank and block.settings.is_completed == false -%}</a>{%- else -%}</div>{%- endif -%}
       </li>
     {%- endfor -%}
   </ul>
 
-  <div class="tour__footer">
-    {%- if section.settings.all_dates_link != blank -%}
-      <a href="{{ section.settings.all_dates_link }}" class="text-link" style="margin-top:0;">{{ section.settings.all_dates_label }}</a>
-    {%- endif -%}
-    {%- if section.settings.vip_link != blank -%}
-      <a href="{{ section.settings.vip_link }}" class="text-link" style="margin-top:0;" target="_blank" rel="noopener">{{ section.settings.vip_label }}</a>
-    {%- endif -%}
-  </div>
+  {%- if section.settings.show_footer -%}
+    <div class="tour__footer">
+      {%- if section.settings.all_dates_link != blank -%}
+        <a href="{{ section.settings.all_dates_link }}" class="text-link" style="margin-top:0;">{{ section.settings.all_dates_label }}</a>
+      {%- endif -%}
+      {%- if section.settings.vip_link != blank -%}
+        <a href="{{ section.settings.vip_link }}" class="text-link" style="margin-top:0;" target="_blank" rel="noopener">{{ section.settings.vip_label }}</a>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
 </section>
 
 {% schema %}
@@ -40,10 +52,13 @@
   "name": "Tour Dates",
   "tag": "section",
   "settings": [
+    { "type": "checkbox", "id": "hide_header", "label": "Hide section header", "default": false },
+    { "type": "checkbox", "id": "compact", "label": "Compact layout", "default": false },
+    { "type": "checkbox", "id": "show_footer", "label": "Show footer links", "default": true },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "On Tour" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "The Star Tour" },
     { "type": "text", "id": "subheading", "label": "Subheading", "default": "2026" },
-    { "type": "text", "id": "all_dates_link", "label": "All dates link", "default": "/pages/tour", "info": "Relative path or full URL" },
+    { "type": "text", "id": "all_dates_link", "label": "All dates link", "default": "/pages/tour" },
     { "type": "text", "id": "all_dates_label", "label": "All dates label", "default": "All Dates" },
     { "type": "url", "id": "vip_link", "label": "VIP link" },
     { "type": "text", "id": "vip_label", "label": "VIP label", "default": "VIP Experience" }
@@ -56,7 +71,10 @@
         { "type": "text", "id": "city", "label": "City", "default": "NEW YORK" },
         { "type": "text", "id": "date", "label": "Date", "default": "JUN 05 2026" },
         { "type": "text", "id": "venue", "label": "Venue" },
-        { "type": "url", "id": "ticket_url", "label": "Tickets URL" }
+        { "type": "text", "id": "support", "label": "Support / notes" },
+        { "type": "url", "id": "ticket_url", "label": "Tickets URL" },
+        { "type": "text", "id": "ticket_label", "label": "Ticket label", "default": "TICKETS" },
+        { "type": "checkbox", "id": "is_completed", "label": "Completed show", "default": false }
       ]
     }
   ],

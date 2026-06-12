@@ -1,33 +1,187 @@
 {
   "sections": {
-    "main": {
+    "laylo": {
+      "type": "tour-laylo",
+      "settings": {
+        "eyebrow": "Tickets",
+        "heading": "Tour",
+        "laylo_drop_id": "6b824bf7-5f13-490e-b6e7-893a0ce04d31",
+        "laylo_profile": "https://laylo.com/2hollis",
+        "laylo_drop": "https://laylo.com/d/6b824bf7-5f13-490e-b6e7-893a0ce04d31"
+      }
+    },
+    "dates": {
       "type": "tour-dates",
       "settings": {
+        "hide_header": true,
         "eyebrow": "The Star Tour",
         "heading": "2026",
         "subheading": "Headline dates · Festivals · VIP available",
+        "show_footer": true,
         "all_dates_link": "https://www.2hollis.life/tour/",
         "all_dates_label": "Official Tour Page",
         "vip_link": "https://www.2hollis.life/star-tour/",
         "vip_label": "VIP Experience"
       },
       "blocks": {
-        "d1": { "type": "date", "settings": { "city": "AUCKLAND", "date": "FEB 18 2026", "venue": "Spark Arena · The Star Tour" } },
-        "d2": { "type": "date", "settings": { "city": "SYDNEY", "date": "FEB 2026", "venue": "Laneway Festival" } },
-        "d3": { "type": "date", "settings": { "city": "MELBOURNE", "date": "FEB 2026", "venue": "Laneway Festival" } },
-        "d4": { "type": "date", "settings": { "city": "SAN ANTONIO", "date": "MAR 06 2026", "venue": "Aztec Theatre", "ticket_url": "https://www.ticketmaster.com/" } },
-        "d5": { "type": "date", "settings": { "city": "MEXICO CITY", "date": "MAR 26 2026", "venue": "Velodromo" } },
-        "d6": { "type": "date", "settings": { "city": "NEW YORK", "date": "JUN 05 2026", "venue": "Governors Ball · Flushing Meadows" } },
-        "d7": { "type": "date", "settings": { "city": "CHICAGO", "date": "JUN 12 2026", "venue": "SeatGeek Stadium" } },
-        "d8": { "type": "date", "settings": { "city": "CHICAGO", "date": "JUN 13 2026", "venue": "SeatGeek Stadium" } },
-        "d9": { "type": "date", "settings": { "city": "LOS ANGELES", "date": "AUG 02 2026", "venue": "Hollywood Park · Inglewood" } },
-        "d10": { "type": "date", "settings": { "city": "NETHERLANDS", "date": "AUG 21 2026", "venue": "Lowlands Festival" } },
-        "d11": { "type": "date", "settings": { "city": "FINLAND", "date": "AUG 21 2026", "venue": "Blockfest · Tampere" } },
-        "d12": { "type": "date", "settings": { "city": "LONDON", "date": "AUG 22 2026", "venue": "All Points East · Victoria Park" } },
-        "d13": { "type": "date", "settings": { "city": "PARIS", "date": "SUMMER 2026", "venue": "TBA" } },
-        "d14": { "type": "date", "settings": { "city": "BERLIN", "date": "SUMMER 2026", "venue": "TBA" } }
+        "au1": {
+          "type": "date",
+          "settings": {
+            "city": "AUCKLAND",
+            "date": "WED FEB 18 2026",
+            "venue": "Powerstation",
+            "support": "w/ Rommulas · The Star Tour",
+            "ticket_url": "https://www.frontiertouring.com/2hollis",
+            "ticket_label": "COMPLETED",
+            "is_completed": true
+          }
+        },
+        "au2": {
+          "type": "date",
+          "settings": {
+            "city": "SYDNEY",
+            "date": "FRI FEB 20 2026",
+            "venue": "Hordern Pavilion",
+            "support": "The Star Tour",
+            "ticket_url": "https://www.frontiertouring.com/2hollis",
+            "ticket_label": "COMPLETED",
+            "is_completed": true
+          }
+        },
+        "au3": {
+          "type": "date",
+          "settings": {
+            "city": "MELBOURNE",
+            "date": "SAT FEB 21 2026",
+            "venue": "Festival Hall",
+            "support": "The Star Tour",
+            "is_completed": true
+          }
+        },
+        "au4": {
+          "type": "date",
+          "settings": {
+            "city": "BRISBANE",
+            "date": "MON FEB 23 2026",
+            "venue": "The Tivoli",
+            "support": "The Star Tour",
+            "is_completed": true
+          }
+        },
+        "au5": {
+          "type": "date",
+          "settings": {
+            "city": "PERTH",
+            "date": "WED FEB 25 2026",
+            "venue": "Metro City",
+            "support": "The Star Tour",
+            "is_completed": true
+          }
+        },
+        "us1": {
+          "type": "date",
+          "settings": {
+            "city": "SAN ANTONIO",
+            "date": "FRI MAR 06 2026",
+            "venue": "Aztec Theatre",
+            "support": "The Star Tour",
+            "ticket_url": "https://www.livenation.com/event/G5dIZbIiJ2km9/2hollis-the-star-tour",
+            "ticket_label": "COMPLETED",
+            "is_completed": true
+          }
+        },
+        "mx1": {
+          "type": "date",
+          "settings": {
+            "city": "MEXICO CITY",
+            "date": "THU MAR 26 2026",
+            "venue": "Velódromo Olímpico",
+            "support": "The Star Tour",
+            "ticket_url": "https://www.ticketmaster.com.mx/",
+            "ticket_label": "COMPLETED",
+            "is_completed": true
+          }
+        },
+        "fest1": {
+          "type": "date",
+          "settings": {
+            "city": "NEW YORK",
+            "date": "FRI JUN 05 2026",
+            "venue": "Governors Ball",
+            "support": "Flushing Meadows Corona Park",
+            "ticket_url": "https://www.governorsballmusicfestival.com/tickets",
+            "ticket_label": "COMPLETED",
+            "is_completed": true
+          }
+        },
+        "fest2": {
+          "type": "date",
+          "settings": {
+            "city": "CHICAGO",
+            "date": "FRI JUN 12 2026",
+            "venue": "SeatGeek Stadium",
+            "support": "Bridgeview, IL",
+            "ticket_url": "https://www.ticketmaster.com/2hollis-tickets/artist/3063351",
+            "ticket_label": "TICKETS"
+          }
+        },
+        "fest3": {
+          "type": "date",
+          "settings": {
+            "city": "CHICAGO",
+            "date": "SAT JUN 13 2026",
+            "venue": "SeatGeek Stadium",
+            "support": "Bridgeview, IL",
+            "ticket_url": "https://www.ticketmaster.com/2hollis-tickets/artist/3063351",
+            "ticket_label": "TICKETS"
+          }
+        },
+        "fest4": {
+          "type": "date",
+          "settings": {
+            "city": "LOS ANGELES",
+            "date": "SUN AUG 02 2026",
+            "venue": "HARD Summer",
+            "support": "Hollywood Park · Inglewood, CA",
+            "ticket_url": "https://on.fgtix.com/trk/5oHm",
+            "ticket_label": "TICKETS"
+          }
+        },
+        "eu1": {
+          "type": "date",
+          "settings": {
+            "city": "NETHERLANDS",
+            "date": "FRI AUG 21 2026",
+            "venue": "Lowlands Festival",
+            "support": "Biddinghuizen",
+            "ticket_url": "https://lowlands.nl/en/tickets/",
+            "ticket_label": "TICKETS"
+          }
+        },
+        "eu2": {
+          "type": "date",
+          "settings": {
+            "city": "FINLAND",
+            "date": "FRI AUG 21 2026",
+            "venue": "Blockfest",
+            "support": "Tampere",
+            "ticket_url": "https://blockfest.fi/en/tickets/",
+            "ticket_label": "TICKETS"
+          }
+        },
+        "eu3": {
+          "type": "date",
+          "settings": {
+            "city": "LONDON",
+            "date": "SAT AUG 22 2026",
+            "venue": "All Points East",
+            "support": "Victoria Park",
+            "ticket_url": "https://www.bandsintown.com/t/1037174320",
+            "ticket_label": "TICKETS"
+          }
+        }
       },
-      "block_order": ["d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "d10", "d11", "d12", "d13", "d14"]
+      "block_order": ["au1", "au2", "au3", "au4", "au5", "us1", "mx1", "fest1", "fest2", "fest3", "fest4", "eu1", "eu2", "eu3"]
     },
     "vip": {
       "type": "newsletter",
@@ -40,5 +194,5 @@
       }
     }
   },
-  "order": ["main", "vip"]
+  "order": ["laylo", "dates", "vip"]
 }

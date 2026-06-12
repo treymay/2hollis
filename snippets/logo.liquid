@@ -1,0 +1,12 @@
+{%- liquid
+  assign logo_w = width | default: 28
+  assign logo_class = class | default: 'site-logo'
+-%}
+<img
+  src="{{ '2hollis-logo.png' | asset_url }}"
+  alt="2HOLLIS"
+  class="{{ logo_class }}"
+  width="{{ logo_w }}"
+  height="{{ logo_w }}"
+  loading="eager"
+>

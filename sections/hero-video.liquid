@@ -11,7 +11,7 @@
       <img
         class="hero__poster"
         src="{{ poster_url }}"
-        alt="2HOLLIS"
+        alt=""
         width="1920"
         height="1080"
         loading="eager"
@@ -38,11 +38,9 @@
     {%- endif -%}
   </div>
 
-  {%- if section.settings.overlay_text != blank -%}
-    <div class="hero__overlay">
-      <h1 class="hero__title">{{ section.settings.overlay_text }}</h1>
-    </div>
-  {%- endif -%}
+  <div class="hero__overlay">
+    {% render 'logo', width: 120, class: 'site-logo site-logo--hero' %}
+  </div>
 
   <div class="hero__controls">
     {%- if section.settings.hero_video != blank or section.settings.video_url != blank -%}
@@ -65,8 +63,7 @@
       "type": "text",
       "id": "youtube_id",
       "label": "YouTube ID (fallback)",
-      "default": "nnzndZQX3SU",
-      "info": "Current 2hollis homepage splash video"
+      "default": "nnzndZQX3SU"
     },
     { "type": "image_picker", "id": "poster_image", "label": "Poster image" },
     {
@@ -74,8 +71,7 @@
       "id": "poster_url",
       "label": "Poster URL (if no image uploaded)",
       "default": "https://www.2hollis.life/wp-content/uploads/sites/2747/2025/02/og2h-compressed.jpg"
-    },
-    { "type": "text", "id": "overlay_text", "label": "Overlay text", "default": "STAR" }
+    }
   ],
   "presets": [{ "name": "Hero Video" }]
 }
