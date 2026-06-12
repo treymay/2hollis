@@ -107,8 +107,7 @@
         "eyebrow": "Stay Connected",
         "heading": "Sign Up",
         "text": "Tour announcements. New music. Exclusive merch drops.",
-        "link": "https://www.2hollis.life/newsletter/",
-        "link_label": "Join"
+        "button_label": "Join"
       }
     }
   },

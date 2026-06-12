@@ -110,8 +110,7 @@
         "eyebrow": "Stay Connected",
         "heading": "New Music First",
         "text": "Tour announcements. Unreleased tracks. Exclusive drops.",
-        "link": "https://www.2hollis.life/newsletter/",
-        "link_label": "Join Newsletter"
+        "button_label": "Join"
       }
     }
   },

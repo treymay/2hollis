@@ -95,10 +95,89 @@
     items.forEach(function (el) { observer.observe(el); });
   }
 
+  function initNewsletter() {
+    var bar = document.querySelector('[data-newsletter-bar]');
+    var modal = document.querySelector('[data-newsletter-modal]');
+    var openBtns = document.querySelectorAll('[data-newsletter-open]');
+    var closeBtns = document.querySelectorAll('[data-newsletter-close]');
+    var storageKey = '2hollis-newsletter-bar-dismissed';
+    var barShown = false;
+
+    function openModal() {
+      if (!modal) return;
+      modal.hidden = false;
+      modal.setAttribute('aria-hidden', 'false');
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      if (!modal) return;
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      window.setTimeout(function () {
+        if (!modal.classList.contains('is-open')) modal.hidden = true;
+      }, 450);
+    }
+
+    function showBar() {
+      if (!bar || barShown || sessionStorage.getItem(storageKey)) return;
+      bar.hidden = false;
+      bar.setAttribute('aria-hidden', 'false');
+      bar.classList.add('is-visible');
+      barShown = true;
+    }
+
+    function hideBar() {
+      if (!bar) return;
+      bar.classList.remove('is-visible');
+      bar.setAttribute('aria-hidden', 'true');
+      sessionStorage.setItem(storageKey, '1');
+      window.setTimeout(function () {
+        if (!bar.classList.contains('is-visible')) bar.hidden = true;
+      }, 700);
+    }
+
+    openBtns.forEach(function (btn) {
+      btn.addEventListener('click', openModal);
+    });
+
+    closeBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        if (btn.closest('[data-newsletter-bar]')) hideBar();
+        else closeModal();
+      });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    if (bar && !sessionStorage.getItem(storageKey)) {
+      var signupSection = document.querySelector('.signup');
+      var revealBar = function () {
+        if (window.scrollY > window.innerHeight * 0.65) showBar();
+      };
+
+      window.addEventListener('scroll', revealBar, { passive: true });
+
+      if (signupSection && 'IntersectionObserver' in window) {
+        var hideObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) hideBar();
+          });
+        }, { threshold: 0.2 });
+        hideObserver.observe(signupSection);
+      }
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initHeader();
     initMenu();
     initHero();
     initReveal();
+    initNewsletter();
   });
 })();

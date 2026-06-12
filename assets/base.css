@@ -449,6 +449,144 @@ ul { list-style: none; margin: 0; padding: 0; }
   text-align: center;
   border-top: 1px solid rgba(255,255,255,0.06);
 }
+.signup__title { margin-top: 1rem; font-size: clamp(2rem, 6vw, 4rem); }
+.signup__text { margin-top: 1.25rem; opacity: 0.35; }
+.signup__form-wrap { max-width: 520px; margin: 2rem auto 0; }
+.signup__alt { margin-top: 1.25rem; opacity: 0.35; }
+.signup__alt a { transition: opacity 0.35s; }
+.signup__alt a:hover { opacity: 1; }
+
+.newsletter-form__fields {
+  display: flex;
+  gap: 0;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.03);
+}
+.newsletter-form__fields--compact { max-width: 420px; }
+.newsletter-form__input {
+  flex: 1;
+  min-width: 0;
+  padding: 1rem 1.1rem;
+  background: transparent;
+  border: 0;
+  color: var(--white);
+  font: inherit;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+.newsletter-form__input::placeholder { color: rgba(255,255,255,0.35); }
+.newsletter-form__input:focus { outline: none; }
+.newsletter-form__submit {
+  padding: 1rem 1.35rem;
+  background: var(--white);
+  color: var(--black);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 10px;
+  transition: opacity 0.35s;
+  white-space: nowrap;
+}
+.newsletter-form__submit:hover { opacity: 0.72; }
+.newsletter-form__message {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.newsletter-form__message--error { opacity: 0.75; }
+.newsletter-form__message--success { opacity: 0.55; }
+
+.newsletter-bar {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 90;
+  padding: 0 clamp(1rem, 3vw, 1.5rem) 1rem;
+  pointer-events: none;
+  transform: translateY(110%);
+  transition: transform 0.7s var(--ease);
+}
+.newsletter-bar.is-visible {
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.newsletter-bar__inner {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  background: rgba(0,0,0,0.92);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(16px);
+}
+.newsletter-bar__copy { text-align: left; }
+.newsletter-bar__eyebrow { opacity: 0.4; margin-bottom: 0.35rem; }
+.newsletter-bar__heading {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+.newsletter-bar__close {
+  justify-self: end;
+  opacity: 0.45;
+  transition: opacity 0.35s;
+}
+.newsletter-bar__close:hover { opacity: 1; }
+
+.newsletter-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.45s, visibility 0.45s;
+}
+.newsletter-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+.newsletter-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.82);
+}
+.newsletter-modal__panel {
+  position: relative;
+  width: min(100%, 520px);
+  padding: clamp(2rem, 5vw, 3rem);
+  background: var(--black);
+  border: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+}
+.newsletter-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  opacity: 0.45;
+  transition: opacity 0.35s;
+}
+.newsletter-modal__close:hover { opacity: 1; }
+.newsletter-modal__title { margin-top: 1rem; font-size: clamp(2rem, 6vw, 3.5rem); }
+.newsletter-modal__text { margin-top: 1rem; opacity: 0.35; }
+.newsletter-modal__form { margin-top: 2rem; }
+
+.site-footer__newsletter-trigger {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.42;
+  transition: opacity 0.35s;
+}
+.site-footer__newsletter-trigger:hover { opacity: 1; }
 
 /* Music page */
 .music { padding: var(--pad) clamp(1.25rem, 4vw, 3rem); background: var(--black); }
@@ -748,6 +886,8 @@ ul { list-style: none; margin: 0; padding: 0; }
   .tour-info__grid { grid-template-columns: 1fr 1fr; }
   .video-featured__grid { grid-template-columns: 1.4fr 1fr; }
   .shop-page__featured-grid { grid-template-columns: repeat(3, 1fr); }
+  .newsletter-bar__inner { grid-template-columns: 1fr minmax(280px, 420px) auto; }
+  .newsletter-bar__form { justify-self: stretch; }
   .archive__grid { grid-template-columns: repeat(4, 1fr); }
   .videos__grid { grid-template-columns: repeat(2, 1fr); }
   .videos--page .videos__grid { grid-template-columns: repeat(3, 1fr); }

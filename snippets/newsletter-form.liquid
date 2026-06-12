@@ -1,0 +1,40 @@
+{%- liquid
+  assign form_id = id | default: 'newsletter'
+  assign btn_label = button_label | default: 'Join'
+  assign compact = compact | default: false
+-%}
+
+{%- form 'customer', id: form_id, class: 'newsletter-form' -%}
+  <input type="hidden" name="contact[tags]" value="newsletter">
+
+  {%- if form.errors -%}
+    <p class="newsletter-form__message newsletter-form__message--error" role="alert">
+      {{ form.errors.translated_fields.email | capitalize }}
+      {{ form.errors.messages.email }}
+    </p>
+  {%- endif -%}
+
+  {%- if form.posted_successfully? -%}
+    <p class="newsletter-form__message newsletter-form__message--success" role="status">
+      {{ success_message | default: 'Thanks — you are on the list.' }}
+    </p>
+  {%- else -%}
+    <div class="newsletter-form__fields{% if compact %} newsletter-form__fields--compact{% endif %}">
+      <label class="visually-hidden" for="{{ form_id }}-email">{{ 'newsletter.email_label' | t }}</label>
+      <input
+        type="email"
+        name="contact[email]"
+        id="{{ form_id }}-email"
+        class="newsletter-form__input"
+        value="{{ form.email }}"
+        placeholder="{{ 'newsletter.email_placeholder' | t }}"
+        autocorrect="off"
+        autocapitalize="off"
+        autocomplete="email"
+        required
+        {% if form.errors %}aria-invalid="true"{% endif %}
+      >
+      <button type="submit" class="newsletter-form__submit type-nav">{{ btn_label }}</button>
+    </div>
+  {%- endif -%}
+{%- endform -%}

@@ -1,11 +1,19 @@
-<section class="signup" data-reveal>
+<section class="signup" data-reveal id="newsletter-{{ section.id }}">
   <p class="type-label">{{ section.settings.eyebrow }}</p>
-  <h2 class="type-headline" style="margin-top:1rem;font-size:clamp(2rem,6vw,4rem);">{{ section.settings.heading }}</h2>
+  <h2 class="type-headline signup__title">{{ section.settings.heading }}</h2>
   {%- if section.settings.text != blank -%}
-    <p class="type-label" style="margin-top:1.25rem;opacity:0.35;">{{ section.settings.text }}</p>
+    <p class="signup__text type-label">{{ section.settings.text }}</p>
   {%- endif -%}
-  {%- if section.settings.link != blank -%}
-    <a href="{{ section.settings.link }}" class="text-link" target="_blank" rel="noopener">{{ section.settings.link_label }}</a>
+
+  <div class="signup__form-wrap">
+    {%- capture newsletter_form_id -%}NewsletterSection-{{ section.id }}{%- endcapture -%}
+    {% render 'newsletter-form', id: newsletter_form_id, button_label: section.settings.button_label %}
+  </div>
+
+  {%- if section.settings.link != blank and section.settings.link_label != blank -%}
+    <p class="signup__alt type-label">
+      <a href="{{ section.settings.link }}" target="_blank" rel="noopener">{{ section.settings.link_label }}</a>
+    </p>
   {%- endif -%}
 </section>
 
@@ -17,8 +25,9 @@
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Stay Connected" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Sign Up" },
     { "type": "text", "id": "text", "label": "Text", "default": "Tour announcements. New music. Exclusive drops." },
-    { "type": "url", "id": "link", "label": "Signup link" },
-    { "type": "text", "id": "link_label", "label": "Link label", "default": "Join" }
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Join" },
+    { "type": "url", "id": "link", "label": "Secondary link (optional)" },
+    { "type": "text", "id": "link_label", "label": "Secondary link label", "default": "More info" }
   ],
   "presets": [{ "name": "Newsletter" }]
 }

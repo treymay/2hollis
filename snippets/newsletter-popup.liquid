@@ -1,0 +1,29 @@
+<div class="newsletter-bar" data-newsletter-bar hidden aria-hidden="true">
+  <div class="newsletter-bar__inner">
+    <div class="newsletter-bar__copy">
+      <p class="type-label newsletter-bar__eyebrow">{{ 'newsletter.bar_eyebrow' | t }}</p>
+      <p class="newsletter-bar__heading">{{ 'newsletter.bar_heading' | t }}</p>
+    </div>
+    <div class="newsletter-bar__form">
+      {% render 'newsletter-form', id: 'NewsletterBar', button_label: 'Join', compact: true %}
+    </div>
+    <button type="button" class="newsletter-bar__close type-nav" data-newsletter-close aria-label="{{ 'newsletter.close' | t }}">
+      {{ 'newsletter.close' | t }}
+    </button>
+  </div>
+</div>
+
+<div class="newsletter-modal" data-newsletter-modal hidden aria-hidden="true">
+  <div class="newsletter-modal__backdrop" data-newsletter-close tabindex="-1"></div>
+  <div class="newsletter-modal__panel" role="dialog" aria-modal="true" aria-labelledby="newsletter-modal-title">
+    <button type="button" class="newsletter-modal__close type-nav" data-newsletter-close aria-label="{{ 'newsletter.close' | t }}">
+      {{ 'newsletter.close' | t }}
+    </button>
+    <p class="type-label">{{ 'newsletter.modal_eyebrow' | t }}</p>
+    <h2 class="type-headline newsletter-modal__title" id="newsletter-modal-title">{{ 'newsletter.modal_heading' | t }}</h2>
+    <p class="newsletter-modal__text type-label">{{ 'newsletter.modal_text' | t }}</p>
+    <div class="newsletter-modal__form">
+      {% render 'newsletter-form', id: 'NewsletterModal', button_label: 'Join' %}
+    </div>
+  </div>
+</div>

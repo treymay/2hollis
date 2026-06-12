@@ -231,9 +231,8 @@
       "settings": {
         "eyebrow": "Don't Miss a Date",
         "heading": "Tour Alerts",
-        "text": "New cities, on-sale announcements, and exclusive presales via Laylo and newsletter.",
-        "link": "https://www.2hollis.life/newsletter/",
-        "link_label": "Sign Up"
+        "text": "New cities, on-sale announcements, and exclusive presales.",
+        "button_label": "Join"
       }
     }
   },

@@ -39,8 +39,7 @@
         "eyebrow": "Drops",
         "heading": "Merch Alerts",
         "text": "Be first to know about restocks, tour exclusives, and limited releases.",
-        "link": "https://www.2hollis.life/newsletter/",
-        "link_label": "Join"
+        "button_label": "Join"
       }
     }
   },

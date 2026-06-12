@@ -34,5 +34,16 @@
     "general": {
       "no_matches": "No products found"
     }
+  },
+  "newsletter": {
+    "email_label": "Email address",
+    "email_placeholder": "Email address",
+    "footer_trigger": "Newsletter",
+    "close": "Close",
+    "bar_eyebrow": "Stay Connected",
+    "bar_heading": "Join the list for tour dates and drops",
+    "modal_eyebrow": "Newsletter",
+    "modal_heading": "Sign Up",
+    "modal_text": "Tour announcements. New music. Exclusive merch."
   }
 }
