@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -36,22 +45,10 @@
     },
     "dates": {
       "type": "tour-dates",
-      "settings": {
-        "hide_header": false,
-        "eyebrow": "All Dates",
-        "heading": "The Star Tour",
-        "subheading": "Headline · Festivals · Completed shows",
-        "show_footer": true,
-        "all_dates_link": "https://www.2hollis.life/tour/",
-        "all_dates_label": "Official Tour Page",
-        "vip_link": "https://www.2hollis.life/star-tour/",
-        "vip_label": "VIP Experience"
-      },
       "blocks": {
         "au1": {
           "type": "date",
           "settings": {
-            "group": "Australia & New Zealand · Completed",
             "city": "AUCKLAND",
             "date": "WED FEB 18 2026",
             "venue": "Powerstation",
@@ -102,7 +99,6 @@
         "us1": {
           "type": "date",
           "settings": {
-            "group": "North America · Headline",
             "city": "SAN ANTONIO",
             "date": "FRI MAR 06 2026",
             "venue": "Aztec Theatre",
@@ -126,7 +122,6 @@
         "fest1": {
           "type": "date",
           "settings": {
-            "group": "Festivals · 2026",
             "city": "NEW YORK",
             "date": "FRI JUN 05 2026",
             "venue": "Governors Ball",
@@ -172,7 +167,6 @@
         "eu1": {
           "type": "date",
           "settings": {
-            "group": "Europe · Festivals",
             "city": "NETHERLANDS",
             "date": "FRI AUG 21 2026",
             "venue": "Lowlands Festival",
@@ -204,7 +198,33 @@
           }
         }
       },
-      "block_order": ["au1", "au2", "au3", "au4", "au5", "us1", "mx1", "fest1", "fest2", "fest3", "fest4", "eu1", "eu2", "eu3"]
+      "block_order": [
+        "au1",
+        "au2",
+        "au3",
+        "au4",
+        "au5",
+        "us1",
+        "mx1",
+        "fest1",
+        "fest2",
+        "fest3",
+        "fest4",
+        "eu1",
+        "eu2",
+        "eu3"
+      ],
+      "settings": {
+        "hide_header": false,
+        "show_footer": true,
+        "eyebrow": "All Dates",
+        "heading": "The Star Tour",
+        "subheading": "Headline · Festivals · Completed shows",
+        "all_dates_link": "https://www.2hollis.life/tour/",
+        "all_dates_label": "Official Tour Page",
+        "vip_link": "https://www.2hollis.life/star-tour/",
+        "vip_label": "VIP Experience"
+      }
     },
     "vip": {
       "type": "newsletter",
@@ -217,5 +237,11 @@
       }
     }
   },
-  "order": ["hero", "laylo", "info", "dates", "vip"]
+  "order": [
+    "hero",
+    "laylo",
+    "info",
+    "dates",
+    "vip"
+  ]
 }

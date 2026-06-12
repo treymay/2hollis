@@ -1,8 +1,18 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "page-hero",
       "settings": {
+        "compact": false,
         "eyebrow": "2HOLLIS",
         "heading": "Music",
         "description": "Albums, singles, and streams. STAR — the fourth studio album — out now on Interscope Records.",
@@ -27,61 +37,72 @@
     },
     "discography": {
       "type": "music-page",
-      "settings": {
-        "show_heading": true,
-        "eyebrow": "Discography",
-        "heading": "All Releases",
-        "intro": "Full catalog including STAR, BOY, and key singles from 2023–2025."
-      },
       "blocks": {
         "star": {
           "type": "release",
           "settings": {
-            "featured": true,
-            "release_type": "Album · 2025",
+            "featured": false,
+            "release_type": "Album",
             "title": "STAR",
             "year": "Interscope Records · 14 tracks",
-            "description": "The Star Tour album cycle. Hyperpop-meets-EDM with arena-scale production and intimate songwriting.",
-            "tracklist": "crush\nFlash\nAfraid\njeans\nnice\nsafety\nstyle\ngold\nposter boy\nboy\nflash\nstar\n22\nhorse",
+            "description": "",
+            "tracklist": "",
+            "tracks": "",
             "artwork_url": "https://www.2hollis.life/wp-content/uploads/sites/2747/2025/02/04Th649731d14-1440x1440.png",
             "stream_url": "https://2hollis.lnk.to/star",
             "spotify_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
-            "apple_url": "https://music.apple.com/us/artist/2hollis/1499876544",
-            "youtube_url": "https://www.youtube.com/@2hollis"
+            "apple_url": "",
+            "youtube_url": ""
           }
         },
         "boy": {
           "type": "release",
           "settings": {
             "featured": false,
-            "release_type": "Album · 2024",
+            "release_type": "Album",
             "title": "BOY",
             "year": "Self-released · 10 tracks",
-            "description": "Breakout project that established 2hollis' blend of electronic production and pop vulnerability.",
-            "tracklist": "boy\ncrush\nposter boy\nking of the darkness\nlife worth losing\npoison\njeans\nafraid\nflash\nnice",
+            "description": "",
+            "tracklist": "",
+            "tracks": "",
+            "artwork": "shopify://shop_images/2hollis_boy_album_cover.jpg",
             "artwork_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/2HOL_BLACKHOODIE_FR.png?v=1739400673",
             "stream_url": "https://2hollis.lnk.to/boy",
             "spotify_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
-            "apple_url": "https://music.apple.com/us/artist/2hollis/1499876544"
+            "apple_url": "",
+            "youtube_url": ""
           }
         },
         "singles": {
           "type": "release",
           "settings": {
             "featured": false,
-            "release_type": "Singles · 2023–2024",
+            "release_type": "Album",
             "title": "SINGLES",
             "year": "Selected releases",
-            "description": "Key singles leading into STAR and the global tour cycle.",
+            "description": "",
+            "tracklist": "",
             "tracks": "jeans · crush · life worth losing · poison · afraid · flash · gold",
+            "artwork": "shopify://shop_images/artworks-my2hN5wVoAxZnASJ-mKN8BA-t500x500.jpg",
             "artwork_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/UMG_DigitalDownload_Template_2hollis.png?v=1744145851",
             "stream_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
             "spotify_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
-            "youtube_url": "https://www.youtube.com/@2hollis"
+            "apple_url": "",
+            "youtube_url": ""
           }
         }
       },
-      "block_order": ["star", "boy", "singles"]
+      "block_order": [
+        "star",
+        "boy",
+        "singles"
+      ],
+      "settings": {
+        "show_heading": true,
+        "eyebrow": "Discography",
+        "heading": "All Releases",
+        "intro": ""
+      }
     },
     "cta": {
       "type": "newsletter",
@@ -94,5 +115,10 @@
       }
     }
   },
-  "order": ["hero", "spotlight", "discography", "cta"]
+  "order": [
+    "hero",
+    "spotlight",
+    "discography",
+    "cta"
+  ]
 }

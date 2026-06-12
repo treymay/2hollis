@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -24,21 +33,11 @@
     },
     "grid": {
       "type": "videos",
-      "settings": {
-        "hide_header": false,
-        "full_page": false,
-        "eyebrow": "Catalog",
-        "heading": "All Videos",
-        "description": "Official releases, live sessions, and collaborations.",
-        "channel_url": "https://www.youtube.com/@2hollis",
-        "channel_label": "Subscribe on YouTube"
-      },
       "blocks": {
         "v1": {
           "type": "video",
           "settings": {
             "title": "2hollis Live at The Shrine — LA",
-            "meta": "2025 · Live Performance",
             "video_url": "https://www.youtube.com/watch?v=QUcTkNzCO5k"
           }
         },
@@ -46,7 +45,6 @@
           "type": "video",
           "settings": {
             "title": "flash (official video)",
-            "meta": "2025 · Official Video · STAR",
             "video_url": "https://www.youtube.com/watch?v=CjnFzPhM72I"
           }
         },
@@ -54,7 +52,6 @@
           "type": "video",
           "settings": {
             "title": "nice (official visualizer)",
-            "meta": "2025 · Official Visualizer · STAR",
             "video_url": "https://www.youtube.com/watch?v=nnzndZQX3SU"
           }
         },
@@ -62,7 +59,6 @@
           "type": "video",
           "settings": {
             "title": "2hollis, nate sib — afraid (official video)",
-            "meta": "2025 · Official Video · STAR",
             "video_url": "https://www.youtube.com/watch?v=Dnmgy81Dh8A"
           }
         },
@@ -70,13 +66,28 @@
           "type": "video",
           "settings": {
             "title": "gold (official video)",
-            "meta": "2025 · Official Video · STAR",
             "video_url": "https://www.youtube.com/watch?v=3X2TE2tjIf8"
           }
         }
       },
-      "block_order": ["v1", "v2", "v3", "v4", "v5"]
+      "block_order": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5"
+      ],
+      "settings": {
+        "hide_header": false,
+        "full_page": false,
+        "eyebrow": "Catalog",
+        "heading": "All Videos"
+      }
     }
   },
-  "order": ["hero", "featured", "grid"]
+  "order": [
+    "hero",
+    "featured",
+    "grid"
+  ]
 }

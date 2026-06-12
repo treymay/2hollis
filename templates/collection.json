@@ -1,14 +1,20 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-collection",
-      "settings": {
-        "eyebrow": "Shop",
-        "description": "Official 2HOLLIS merch. STAR tour exclusives, hoodies, tees, hats, and limited drops.",
-        "products_per_page": 24,
-        "empty_text": "No products in this collection."
-      }
+      "settings": {}
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
