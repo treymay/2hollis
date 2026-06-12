@@ -12,7 +12,10 @@
     "hero": {
       "type": "hero-video",
       "settings": {
-        "youtube_id": "nnzndZQX3SU"
+        "hero_video": "shopify://files/videos/2hollis - nice (official visualizer) - 2hollis (1080p).mp4",
+        "video_url": "",
+        "youtube_id": "nnzndZQX3SU",
+        "poster_url": ""
       }
     },
     "release": {
@@ -31,7 +34,98 @@
     },
     "tour": {
       "type": "tour-dates",
+      "blocks": {
+        "d1": {
+          "type": "date",
+          "settings": {
+            "city": "CHICAGO",
+            "group": "",
+            "date": "JUN 12 2026",
+            "venue": "SeatGeek Stadium",
+            "support": "Bridgeview, IL",
+            "ticket_url": "https://www.ticketmaster.com/2hollis-tickets/artist/3063351",
+            "ticket_label": "TICKETS",
+            "is_completed": false
+          }
+        },
+        "d2": {
+          "type": "date",
+          "settings": {
+            "city": "CHICAGO",
+            "group": "",
+            "date": "JUN 13 2026",
+            "venue": "SeatGeek Stadium",
+            "support": "Bridgeview, IL",
+            "ticket_url": "https://www.ticketmaster.com/2hollis-tickets/artist/3063351",
+            "ticket_label": "TICKETS",
+            "is_completed": false
+          }
+        },
+        "d3": {
+          "type": "date",
+          "settings": {
+            "city": "LOS ANGELES",
+            "group": "",
+            "date": "AUG 02 2026",
+            "venue": "HARD Summer · Hollywood Park",
+            "support": "Inglewood, CA",
+            "ticket_url": "https://on.fgtix.com/trk/5oHm",
+            "ticket_label": "TICKETS",
+            "is_completed": false
+          }
+        },
+        "d4": {
+          "type": "date",
+          "settings": {
+            "city": "NETHERLANDS",
+            "group": "",
+            "date": "AUG 21 2026",
+            "venue": "Lowlands Festival",
+            "support": "Biddinghuizen",
+            "ticket_url": "https://lowlands.nl/en/tickets/",
+            "ticket_label": "TICKETS",
+            "is_completed": false
+          }
+        },
+        "d5": {
+          "type": "date",
+          "settings": {
+            "city": "FINLAND",
+            "group": "",
+            "date": "AUG 21 2026",
+            "venue": "Blockfest",
+            "support": "Tampere",
+            "ticket_url": "https://blockfest.fi/en/tickets/",
+            "ticket_label": "TICKETS",
+            "is_completed": false
+          }
+        },
+        "d6": {
+          "type": "date",
+          "settings": {
+            "city": "LONDON",
+            "group": "",
+            "date": "AUG 22 2026",
+            "venue": "All Points East · Victoria Park",
+            "support": "",
+            "ticket_url": "https://www.bandsintown.com/t/1037174320",
+            "ticket_label": "TICKETS",
+            "is_completed": false
+          }
+        }
+      },
+      "block_order": [
+        "d1",
+        "d2",
+        "d3",
+        "d4",
+        "d5",
+        "d6"
+      ],
       "settings": {
+        "hide_header": false,
+        "compact": false,
+        "show_footer": true,
         "eyebrow": "On Tour",
         "heading": "The Star Tour",
         "subheading": "2026",
@@ -39,75 +133,7 @@
         "all_dates_label": "All Dates",
         "vip_link": "/pages/tour",
         "vip_label": "VIP Experience"
-      },
-      "blocks": {
-        "d1": {
-          "type": "date",
-          "settings": {
-            "city": "CHICAGO",
-            "date": "JUN 12 2026",
-            "venue": "SeatGeek Stadium",
-            "support": "Bridgeview, IL",
-            "ticket_url": "https://www.ticketmaster.com/2hollis-tickets/artist/3063351",
-            "ticket_label": "TICKETS"
-          }
-        },
-        "d2": {
-          "type": "date",
-          "settings": {
-            "city": "CHICAGO",
-            "date": "JUN 13 2026",
-            "venue": "SeatGeek Stadium",
-            "support": "Bridgeview, IL",
-            "ticket_url": "https://www.ticketmaster.com/2hollis-tickets/artist/3063351",
-            "ticket_label": "TICKETS"
-          }
-        },
-        "d3": {
-          "type": "date",
-          "settings": {
-            "city": "LOS ANGELES",
-            "date": "AUG 02 2026",
-            "venue": "HARD Summer · Hollywood Park",
-            "support": "Inglewood, CA",
-            "ticket_url": "https://on.fgtix.com/trk/5oHm",
-            "ticket_label": "TICKETS"
-          }
-        },
-        "d4": {
-          "type": "date",
-          "settings": {
-            "city": "NETHERLANDS",
-            "date": "AUG 21 2026",
-            "venue": "Lowlands Festival",
-            "support": "Biddinghuizen",
-            "ticket_url": "https://lowlands.nl/en/tickets/",
-            "ticket_label": "TICKETS"
-          }
-        },
-        "d5": {
-          "type": "date",
-          "settings": {
-            "city": "FINLAND",
-            "date": "AUG 21 2026",
-            "venue": "Blockfest",
-            "support": "Tampere",
-            "ticket_url": "https://blockfest.fi/en/tickets/",
-            "ticket_label": "TICKETS"
-          }
-        },
-        "d6": {
-          "type": "date",
-          "settings": {
-            "city": "LONDON",
-            "date": "AUG 22 2026",
-            "venue": "All Points East · Victoria Park",
-            "ticket_url": "https://www.bandsintown.com/t/1037174320",
-            "ticket_label": "TICKETS"
-          }
-        }
-      },
-      "block_order": ["d1", "d2", "d3", "d4", "d5", "d6"]
+      }
     },
     "signup": {
       "type": "newsletter",
@@ -115,9 +141,16 @@
         "eyebrow": "Stay Connected",
         "heading": "Sign Up",
         "text": "Tour announcements. New music. Exclusive merch drops.",
-        "button_label": "Join"
+        "button_label": "Join",
+        "link": "",
+        "link_label": "More info"
       }
     }
   },
-  "order": ["hero", "release", "tour", "signup"]
+  "order": [
+    "hero",
+    "release",
+    "tour",
+    "signup"
+  ]
 }
