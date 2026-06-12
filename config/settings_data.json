@@ -9,6 +9,8 @@
  */
 {
   "current": {
+    "favicon": "shopify://shop_images/2HOLLIS-0001-_Store-Launch_Logo-1_5e5089a9-74c1-4e8e-a4db-981175520803.webp",
+    "share_image": "shopify://shop_images/ad8e0d86c39cd632d32f7da321d88618928469ff-3948x4932.jpg",
     "artist_bio": "Producer and artist from Los Angeles. Fourth album STAR out now on Interscope.",
     "stream_star": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
     "stream_boy": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
@@ -21,8 +23,16 @@
     "social_spotify": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
     "social_discord": "https://discord.gg/2hollis",
     "sections": {
-      "header": { "type": "header", "settings": {} },
-      "footer": { "type": "footer", "settings": {} }
+      "header": {
+        "type": "header",
+        "settings": {
+          "menu": "main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {}
+      }
     },
     "content_for_index": []
   }
