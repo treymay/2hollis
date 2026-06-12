@@ -1,13 +1,16 @@
+{%- assign menu = section.settings.menu -%}
+
 <header class="site-header type-nav" data-header>
   <a href="{{ routes.root_url }}" class="site-header__logo" aria-label="2HOLLIS">
     {% render 'logo', width: 26, class: 'site-logo site-logo--header' %}
   </a>
 
   <nav class="site-header__nav" aria-label="Main">
-    <a href="/pages/music">Music</a>
-    <a href="{{ routes.all_products_collection_url }}">Shop</a>
-    <a href="/pages/tour">Tour</a>
-    <a href="/pages/video">Video</a>
+    {%- if menu != blank -%}
+      {%- for link in menu.links -%}
+        <a href="{{ link.url }}">{{ link.title | escape }}</a>
+      {%- endfor -%}
+    {%- endif -%}
   </nav>
 
   <div class="site-header__actions">
@@ -22,12 +25,23 @@
 
 <nav class="mobile-nav type-nav" data-mobile-nav aria-hidden="true">
   <button class="mobile-nav__close" type="button" data-menu-close>{{ 'general.accessibility.close_menu' | t }}</button>
-  <a href="/pages/music">Music</a>
-  <a href="{{ routes.all_products_collection_url }}">Shop</a>
-  <a href="/pages/tour">Tour</a>
-  <a href="/pages/video">Video</a>
+  {%- if menu != blank -%}
+    {%- for link in menu.links -%}
+      <a href="{{ link.url }}">{{ link.title | escape }}</a>
+    {%- endfor -%}
+  {%- endif -%}
 </nav>
 
 {% schema %}
-{ "name": "Header", "settings": [] }
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+  ]
+}
 {% endschema %}
