@@ -16,8 +16,8 @@
         "eyebrow": "2HOLLIS",
         "heading": "Music",
         "description": "Albums, singles, and streams. STAR — the fourth studio album — out now on Interscope Records.",
-        "link": "https://2hollis.lnk.to/star",
-        "link_label": "Stream STAR",
+        "link": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
+        "link_label": "Stream on Spotify",
         "link_external": true
       }
     },
@@ -28,8 +28,8 @@
         "title": "STAR",
         "subtitle": "Album — April 4, 2025 · Interscope Records",
         "description": "Fourth studio album blending EDM, hyperpop, and electropop. Produced across LA and Portland. Featuring Afraid with nate sib, Flash, Style, crush, and more.",
-        "artwork_url": "https://www.2hollis.life/wp-content/uploads/sites/2747/2025/02/04Th649731d14-1440x1440.png",
-        "stream_url": "https://2hollis.lnk.to/star",
+        "artwork_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/UMG_DigitalDownload_Template_2hollis.png?v=1744145851",
+        "stream_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
         "cta_label": "Stream Now",
         "spotify_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
         "apple_url": "https://music.apple.com/us/artist/2hollis/1499876544"
@@ -48,8 +48,8 @@
             "description": "",
             "tracklist": "",
             "tracks": "",
-            "artwork_url": "https://www.2hollis.life/wp-content/uploads/sites/2747/2025/02/04Th649731d14-1440x1440.png",
-            "stream_url": "https://2hollis.lnk.to/star",
+            "artwork_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/UMG_DigitalDownload_Template_2hollis.png?v=1744145851",
+            "stream_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
             "spotify_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
             "apple_url": "",
             "youtube_url": ""
@@ -67,7 +67,7 @@
             "tracks": "",
             "artwork": "shopify://shop_images/2hollis_boy_album_cover.jpg",
             "artwork_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/2HOL_BLACKHOODIE_FR.png?v=1739400673",
-            "stream_url": "https://2hollis.lnk.to/boy",
+            "stream_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
             "spotify_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
             "apple_url": "",
             "youtube_url": ""

@@ -5,7 +5,7 @@
     "theme_version": "2.1.0",
     "theme_author": "2HOLLIS",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
-    "theme_support_url": "https://www.2hollis.life/"
+    "theme_support_url": "https://help.shopify.com/manual/online-store/themes"
   },
   {
     "name": "Brand",
@@ -94,12 +94,8 @@
       {
         "type": "url",
         "id": "tour_vip_url",
-        "label": "VIP / tickets page"
-      },
-      {
-        "type": "url",
-        "id": "newsletter_url",
-        "label": "Newsletter signup"
+        "label": "VIP page",
+        "info": "Optional. Leave blank to link to /pages/tour in the footer."
       }
     ]
   }

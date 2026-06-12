@@ -3,8 +3,7 @@
     "hero": {
       "type": "hero-video",
       "settings": {
-        "youtube_id": "nnzndZQX3SU",
-        "poster_url": "https://www.2hollis.life/wp-content/uploads/sites/2747/2025/02/og2h-compressed.jpg"
+        "youtube_id": "nnzndZQX3SU"
       }
     },
     "release": {
@@ -14,8 +13,8 @@
         "title": "STAR",
         "subtitle": "Album — April 4, 2025 · Interscope Records",
         "description": "Fourth studio album. EDM, hyperpop, electropop. Singles include Afraid, Style, and Flash.",
-        "artwork_url": "https://www.2hollis.life/wp-content/uploads/sites/2747/2025/02/04Th649731d14-1440x1440.png",
-        "stream_url": "https://2hollis.lnk.to/star",
+        "artwork_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/UMG_DigitalDownload_Template_2hollis.png?v=1744145851",
+        "stream_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
         "cta_label": "Stream Now",
         "spotify_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
         "apple_url": "https://music.apple.com/us/artist/2hollis/1499876544"
@@ -29,7 +28,7 @@
         "subheading": "2026",
         "all_dates_link": "/pages/tour",
         "all_dates_label": "All Dates",
-        "vip_link": "https://www.2hollis.life/star-tour/",
+        "vip_link": "/pages/tour",
         "vip_label": "VIP Experience"
       },
       "blocks": {

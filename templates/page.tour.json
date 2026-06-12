@@ -39,7 +39,7 @@
         "block_2_eyebrow": "VIP",
         "block_2_heading": "Star Experience",
         "block_2_text": "Meet & greet · Signed laminate · Exclusive merch pack · Early entry · Priority merch shopping.",
-        "block_2_link": "https://www.2hollis.life/star-tour/",
+        "block_2_link": "/pages/tour",
         "block_2_link_label": "VIP Info"
       }
     },
@@ -220,9 +220,9 @@
         "eyebrow": "All Dates",
         "heading": "The Star Tour",
         "subheading": "Headline · Festivals · Completed shows",
-        "all_dates_link": "https://www.2hollis.life/tour/",
-        "all_dates_label": "Official Tour Page",
-        "vip_link": "https://www.2hollis.life/star-tour/",
+        "all_dates_link": "/pages/tour",
+        "all_dates_label": "All Dates",
+        "vip_link": "/pages/tour",
         "vip_label": "VIP Experience"
       }
     },

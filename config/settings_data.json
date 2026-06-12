@@ -1,8 +1,8 @@
 {
   "current": {
     "artist_bio": "Producer and artist from Portland. Fourth album STAR out now on Interscope.",
-    "stream_star": "https://2hollis.lnk.to/star",
-    "stream_boy": "https://2hollis.lnk.to/boy",
+    "stream_star": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
+    "stream_boy": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
     "stream_spotify": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
     "stream_apple": "https://music.apple.com/us/artist/2hollis/1499876544",
     "stream_youtube": "https://www.youtube.com/@2hollis",
@@ -11,8 +11,6 @@
     "social_youtube": "https://www.youtube.com/@2hollis",
     "social_spotify": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
     "social_discord": "https://discord.gg/2hollis",
-    "tour_vip_url": "https://www.2hollis.life/star-tour/",
-    "newsletter_url": "https://www.2hollis.life/newsletter/",
     "sections": {
       "header": { "type": "header", "settings": {} },
       "footer": { "type": "footer", "settings": {} }

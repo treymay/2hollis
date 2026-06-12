@@ -48,7 +48,7 @@
         <a href="{{ section.settings.all_dates_link }}" class="text-link" style="margin-top:0;">{{ section.settings.all_dates_label }}</a>
       {%- endif -%}
       {%- if section.settings.vip_link != blank -%}
-        <a href="{{ section.settings.vip_link }}" class="text-link" style="margin-top:0;" target="_blank" rel="noopener">{{ section.settings.vip_label }}</a>
+        <a href="{{ section.settings.vip_link }}" class="text-link" style="margin-top:0;">{{ section.settings.vip_label }}</a>
       {%- endif -%}
     </div>
   {%- endif -%}
@@ -67,7 +67,7 @@
     { "type": "text", "id": "subheading", "label": "Subheading", "default": "2026" },
     { "type": "text", "id": "all_dates_link", "label": "All dates link", "default": "/pages/tour" },
     { "type": "text", "id": "all_dates_label", "label": "All dates label", "default": "All Dates" },
-    { "type": "url", "id": "vip_link", "label": "VIP link" },
+    { "type": "text", "id": "vip_link", "label": "VIP link", "default": "/pages/tour" },
     { "type": "text", "id": "vip_label", "label": "VIP label", "default": "VIP Experience" }
   ],
   "blocks": [
