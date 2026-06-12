@@ -1,48 +1,98 @@
 {
   "sections": {
-    "main": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "eyebrow": "2HOLLIS",
+        "heading": "Music",
+        "description": "Albums, singles, and streams. STAR — the fourth studio album — out now on Interscope Records.",
+        "link": "https://2hollis.lnk.to/star",
+        "link_label": "Stream STAR",
+        "link_external": true
+      }
+    },
+    "spotlight": {
+      "type": "latest-release",
+      "settings": {
+        "eyebrow": "Latest Release",
+        "title": "STAR",
+        "subtitle": "Album — April 4, 2025 · Interscope Records",
+        "description": "Fourth studio album blending EDM, hyperpop, and electropop. Produced across LA and Portland. Featuring Afraid with nate sib, Flash, Style, crush, and more.",
+        "artwork_url": "https://www.2hollis.life/wp-content/uploads/sites/2747/2025/02/04Th649731d14-1440x1440.png",
+        "stream_url": "https://2hollis.lnk.to/star",
+        "cta_label": "Stream Now",
+        "spotify_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
+        "apple_url": "https://music.apple.com/us/artist/2hollis/1499876544"
+      }
+    },
+    "discography": {
       "type": "music-page",
       "settings": {
+        "show_heading": true,
         "eyebrow": "Discography",
-        "heading": "Music"
+        "heading": "All Releases",
+        "intro": "Full catalog including STAR, BOY, and key singles from 2023–2025."
       },
       "blocks": {
         "star": {
           "type": "release",
           "settings": {
+            "featured": true,
+            "release_type": "Album · 2025",
             "title": "STAR",
-            "year": "2025 — Album · Interscope Records",
-            "tracks": "Afraid · Style · Flash · crush · jeans · safety",
+            "year": "Interscope Records · 14 tracks",
+            "description": "The Star Tour album cycle. Hyperpop-meets-EDM with arena-scale production and intimate songwriting.",
+            "tracklist": "crush\nFlash\nAfraid\njeans\nnice\nsafety\nstyle\ngold\nposter boy\nboy\nflash\nstar\n22\nhorse",
             "artwork_url": "https://www.2hollis.life/wp-content/uploads/sites/2747/2025/02/04Th649731d14-1440x1440.png",
             "stream_url": "https://2hollis.lnk.to/star",
-            "spotify_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG"
+            "spotify_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
+            "apple_url": "https://music.apple.com/us/artist/2hollis/1499876544",
+            "youtube_url": "https://www.youtube.com/@2hollis"
           }
         },
         "boy": {
           "type": "release",
           "settings": {
+            "featured": false,
+            "release_type": "Album · 2024",
             "title": "BOY",
-            "year": "2024 — Album",
-            "tracks": "boy · crush · poster boy · king of the darkness",
+            "year": "Self-released · 10 tracks",
+            "description": "Breakout project that established 2hollis' blend of electronic production and pop vulnerability.",
+            "tracklist": "boy\ncrush\nposter boy\nking of the darkness\nlife worth losing\npoison\njeans\nafraid\nflash\nnice",
             "artwork_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/2HOL_BLACKHOODIE_FR.png?v=1739400673",
             "stream_url": "https://2hollis.lnk.to/boy",
-            "spotify_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG"
+            "spotify_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
+            "apple_url": "https://music.apple.com/us/artist/2hollis/1499876544"
           }
         },
         "singles": {
           "type": "release",
           "settings": {
+            "featured": false,
+            "release_type": "Singles · 2023–2024",
             "title": "SINGLES",
-            "year": "2023 — 2024",
-            "tracks": "jeans · crush · life worth losing · poison · afraid",
+            "year": "Selected releases",
+            "description": "Key singles leading into STAR and the global tour cycle.",
+            "tracks": "jeans · crush · life worth losing · poison · afraid · flash · gold",
             "artwork_url": "https://cdn.shopify.com/s/files/1/0623/4223/4182/files/UMG_DigitalDownload_Template_2hollis.png?v=1744145851",
             "stream_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
-            "spotify_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG"
+            "spotify_url": "https://open.spotify.com/artist/72NhFAGG5Pt91VbheJeEPG",
+            "youtube_url": "https://www.youtube.com/@2hollis"
           }
         }
       },
       "block_order": ["star", "boy", "singles"]
+    },
+    "cta": {
+      "type": "newsletter",
+      "settings": {
+        "eyebrow": "Stay Connected",
+        "heading": "New Music First",
+        "text": "Tour announcements. Unreleased tracks. Exclusive drops.",
+        "link": "https://www.2hollis.life/newsletter/",
+        "link_label": "Join Newsletter"
+      }
     }
   },
-  "order": ["main"]
+  "order": ["hero", "spotlight", "discography", "cta"]
 }

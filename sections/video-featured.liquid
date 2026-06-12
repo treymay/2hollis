@@ -1,0 +1,66 @@
+{%- liquid
+  assign yt_url = section.settings.video_url
+  assign yt_id = section.settings.youtube_id
+  if yt_id == blank and yt_url != blank
+    if yt_url contains 'youtu.be/'
+      assign yt_id = yt_url | split: 'youtu.be/' | last | split: '?' | first
+    elsif yt_url contains 'v='
+      assign yt_id = yt_url | split: 'v=' | last | split: '&' | first
+    endif
+  endif
+-%}
+
+<section class="video-featured" data-reveal>
+  <div class="video-featured__grid">
+    <div class="video-featured__player">
+      {%- if yt_id != blank -%}
+        <div class="video-featured__embed">
+          <iframe
+            src="https://www.youtube.com/embed/{{ yt_id }}?rel=0&modestbranding=1"
+            title="{{ section.settings.title | escape }}"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      {%- elsif section.settings.poster_url != blank -%}
+        <a href="{{ section.settings.video_url }}" class="video-featured__poster" target="_blank" rel="noopener">
+          <img src="{{ section.settings.poster_url }}" alt="{{ section.settings.title | escape }}" width="1280" height="720" loading="eager">
+          <span class="video-featured__play" aria-hidden="true">▶</span>
+        </a>
+      {%- endif -%}
+    </div>
+    <div class="video-featured__copy">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="type-label">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h2 class="video-featured__title type-headline">{{ section.settings.title }}</h2>
+      {%- if section.settings.meta != blank -%}
+        <p class="type-label video-featured__meta">{{ section.settings.meta }}</p>
+      {%- endif -%}
+      {%- if section.settings.description != blank -%}
+        <p class="video-featured__desc">{{ section.settings.description }}</p>
+      {%- endif -%}
+      {%- if section.settings.video_url != blank -%}
+        <a href="{{ section.settings.video_url }}" class="text-link" target="_blank" rel="noopener">Watch on YouTube</a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Video Featured",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Featured" },
+    { "type": "text", "id": "title", "label": "Title", "default": "nice (official visualizer)" },
+    { "type": "text", "id": "meta", "label": "Meta", "default": "2025 · Official Visualizer" },
+    { "type": "textarea", "id": "description", "label": "Description" },
+    { "type": "text", "id": "youtube_id", "label": "YouTube ID" },
+    { "type": "url", "id": "video_url", "label": "YouTube URL" },
+    { "type": "text", "id": "poster_url", "label": "Poster URL (fallback)" }
+  ],
+  "presets": [{ "name": "Video Featured" }]
+}
+{% endschema %}

@@ -1,0 +1,45 @@
+<section class="tour-info" data-reveal>
+  <div class="tour-info__grid">
+    <div class="tour-info__block">
+      <p class="type-label">{{ section.settings.block_1_eyebrow }}</p>
+      <h2 class="tour-info__title type-headline">{{ section.settings.block_1_heading }}</h2>
+      <p class="tour-info__text">{{ section.settings.block_1_text }}</p>
+    </div>
+    <div class="tour-info__block">
+      <p class="type-label">{{ section.settings.block_2_eyebrow }}</p>
+      <h2 class="tour-info__title type-headline">{{ section.settings.block_2_heading }}</h2>
+      <p class="tour-info__text">{{ section.settings.block_2_text }}</p>
+      {%- if section.settings.block_2_link != blank -%}
+        <a href="{{ section.settings.block_2_link }}" class="text-link" target="_blank" rel="noopener">{{ section.settings.block_2_link_label }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Tour Info",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "block_1_eyebrow", "label": "Block 1 eyebrow", "default": "The Star Tour" },
+    { "type": "text", "id": "block_1_heading", "label": "Block 1 heading", "default": "2026" },
+    {
+      "type": "textarea",
+      "id": "block_1_text",
+      "label": "Block 1 text",
+      "default": "Headline shows across Australia, North America, and Europe. Festival appearances including Governors Ball, HARD Summer, Lowlands, Blockfest, and All Points East."
+    },
+    { "type": "text", "id": "block_2_eyebrow", "label": "Block 2 eyebrow", "default": "VIP" },
+    { "type": "text", "id": "block_2_heading", "label": "Block 2 heading", "default": "Star Experience" },
+    {
+      "type": "textarea",
+      "id": "block_2_text",
+      "label": "Block 2 text",
+      "default": "Meet & greet · Signed laminate · Exclusive merch pack · Early entry · Priority merch shopping."
+    },
+    { "type": "url", "id": "block_2_link", "label": "Block 2 link" },
+    { "type": "text", "id": "block_2_link_label", "label": "Block 2 link label", "default": "VIP Info" }
+  ],
+  "presets": [{ "name": "Tour Info" }]
+}
+{% endschema %}

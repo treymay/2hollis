@@ -1,22 +1,46 @@
 {
   "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "eyebrow": "On Tour",
+        "heading": "Tour",
+        "description": "The Star Tour 2026 — headline shows, festivals, and VIP experiences across Australia, North America, and Europe.",
+        "link": "https://laylo.com/d/6b824bf7-5f13-490e-b6e7-893a0ce04d31",
+        "link_label": "Get Notified",
+        "link_external": true
+      }
+    },
     "laylo": {
       "type": "tour-laylo",
       "settings": {
         "eyebrow": "Tickets",
-        "heading": "Tour",
+        "heading": "Dates & Alerts",
         "laylo_drop_id": "6b824bf7-5f13-490e-b6e7-893a0ce04d31",
         "laylo_profile": "https://laylo.com/2hollis",
         "laylo_drop": "https://laylo.com/d/6b824bf7-5f13-490e-b6e7-893a0ce04d31"
       }
     },
+    "info": {
+      "type": "tour-info",
+      "settings": {
+        "block_1_eyebrow": "The Star Tour",
+        "block_1_heading": "2026",
+        "block_1_text": "Headline shows across Australia, North America, and Europe. Festival appearances including Governors Ball, HARD Summer, Lowlands, Blockfest, and All Points East.",
+        "block_2_eyebrow": "VIP",
+        "block_2_heading": "Star Experience",
+        "block_2_text": "Meet & greet · Signed laminate · Exclusive merch pack · Early entry · Priority merch shopping.",
+        "block_2_link": "https://www.2hollis.life/star-tour/",
+        "block_2_link_label": "VIP Info"
+      }
+    },
     "dates": {
       "type": "tour-dates",
       "settings": {
-        "hide_header": true,
-        "eyebrow": "The Star Tour",
-        "heading": "2026",
-        "subheading": "Headline dates · Festivals · VIP available",
+        "hide_header": false,
+        "eyebrow": "All Dates",
+        "heading": "The Star Tour",
+        "subheading": "Headline · Festivals · Completed shows",
         "show_footer": true,
         "all_dates_link": "https://www.2hollis.life/tour/",
         "all_dates_label": "Official Tour Page",
@@ -27,12 +51,11 @@
         "au1": {
           "type": "date",
           "settings": {
+            "group": "Australia & New Zealand · Completed",
             "city": "AUCKLAND",
             "date": "WED FEB 18 2026",
             "venue": "Powerstation",
             "support": "w/ Rommulas · The Star Tour",
-            "ticket_url": "https://www.frontiertouring.com/2hollis",
-            "ticket_label": "COMPLETED",
             "is_completed": true
           }
         },
@@ -43,8 +66,6 @@
             "date": "FRI FEB 20 2026",
             "venue": "Hordern Pavilion",
             "support": "The Star Tour",
-            "ticket_url": "https://www.frontiertouring.com/2hollis",
-            "ticket_label": "COMPLETED",
             "is_completed": true
           }
         },
@@ -81,6 +102,7 @@
         "us1": {
           "type": "date",
           "settings": {
+            "group": "North America · Headline",
             "city": "SAN ANTONIO",
             "date": "FRI MAR 06 2026",
             "venue": "Aztec Theatre",
@@ -97,7 +119,6 @@
             "date": "THU MAR 26 2026",
             "venue": "Velódromo Olímpico",
             "support": "The Star Tour",
-            "ticket_url": "https://www.ticketmaster.com.mx/",
             "ticket_label": "COMPLETED",
             "is_completed": true
           }
@@ -105,6 +126,7 @@
         "fest1": {
           "type": "date",
           "settings": {
+            "group": "Festivals · 2026",
             "city": "NEW YORK",
             "date": "FRI JUN 05 2026",
             "venue": "Governors Ball",
@@ -150,6 +172,7 @@
         "eu1": {
           "type": "date",
           "settings": {
+            "group": "Europe · Festivals",
             "city": "NETHERLANDS",
             "date": "FRI AUG 21 2026",
             "venue": "Lowlands Festival",
@@ -186,13 +209,13 @@
     "vip": {
       "type": "newsletter",
       "settings": {
-        "eyebrow": "VIP",
-        "heading": "Star VIP Experience",
-        "text": "Meet & greet · Exclusive merch pack · Signed laminate · First entry · First access merch shopping.",
-        "link": "https://www.2hollis.life/star-tour/",
-        "link_label": "VIP Info"
+        "eyebrow": "Don't Miss a Date",
+        "heading": "Tour Alerts",
+        "text": "New cities, on-sale announcements, and exclusive presales via Laylo and newsletter.",
+        "link": "https://www.2hollis.life/newsletter/",
+        "link_label": "Sign Up"
       }
     }
   },
-  "order": ["laylo", "dates", "vip"]
+  "order": ["hero", "laylo", "info", "dates", "vip"]
 }

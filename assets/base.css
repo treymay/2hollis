@@ -87,6 +87,23 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 .page-shell { padding-top: var(--header-h); min-height: 100vh; }
 
+.page-hero {
+  padding: calc(var(--header-h) + 3rem) clamp(1.25rem, 4vw, 3rem) clamp(2rem, 6vw, 4rem);
+  background: var(--black);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.page-hero--compact { padding-bottom: 1.5rem; }
+.page-hero__inner { max-width: 920px; margin: 0 auto; text-align: center; }
+.page-hero__title { margin-top: 1rem; font-size: clamp(2.5rem, 8vw, 5.5rem); }
+.page-hero__desc {
+  margin: 1.5rem auto 0;
+  max-width: 560px;
+  opacity: 0.35;
+  font-size: 13px;
+  line-height: 1.75;
+  letter-spacing: 0.04em;
+}
+
 /* Header */
 .site-header {
   position: fixed;
@@ -313,7 +330,12 @@ ul { list-style: none; margin: 0; padding: 0; }
 .tour__ticket { display: block; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; margin-top: 0.5rem; opacity: 0.85; }
 .tour__ticket--past { opacity: 0.35; }
 .tour__row--past .tour__city { opacity: 0.35; }
-.tour__row--past .tour__link:hover { opacity: 0.35; }
+.tour__group {
+  padding: 2.5rem 0 0.75rem;
+  border-bottom: none;
+}
+.tour__group .type-label { opacity: 0.35; }
+.tour__group:first-child { padding-top: 0; }
 .tour__footer { text-align: center; margin-top: 3.5rem; display: flex; flex-direction: column; gap: 1rem; align-items: center; }
 
 .tour-laylo {
@@ -335,6 +357,26 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .tour-laylo__links a { transition: opacity 0.35s; }
 .tour-laylo__links a:hover { opacity: 1; }
+
+.tour-info {
+  padding: 0 clamp(1.25rem, 4vw, 3rem) var(--pad);
+  background: var(--black);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.tour-info__grid {
+  display: grid;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.tour-info__title { margin-top: 1rem; font-size: clamp(2rem, 6vw, 3.5rem); }
+.tour-info__text {
+  margin-top: 1.25rem;
+  opacity: 0.35;
+  font-size: 13px;
+  line-height: 1.75;
+  max-width: 460px;
+}
 
 /* Merch */
 .merch { padding: var(--pad) 0; background: var(--black); }
@@ -409,20 +451,61 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 /* Music page */
-.music { padding: calc(var(--header-h) + 4rem) clamp(1.25rem, 4vw, 3rem) var(--pad); }
+.music { padding: var(--pad) clamp(1.25rem, 4vw, 3rem); background: var(--black); }
+.music__intro { margin-bottom: 1rem; }
+.music__intro-text {
+  margin: 1.25rem auto 0;
+  max-width: 560px;
+  opacity: 0.35;
+  font-size: 13px;
+  line-height: 1.75;
+}
 .music__item {
   display: grid;
   gap: 2.5rem;
   max-width: 1100px;
   margin: 0 auto 5rem;
-  align-items: center;
+  align-items: start;
 }
 .music__item + .music__item {
   padding-top: 4rem;
   border-top: 1px solid rgba(255,255,255,0.07);
 }
+.music__item--featured .music__art { max-width: 380px; }
+.music__item--featured .music__title { font-size: clamp(2.5rem, 8vw, 5rem); }
 .music__art { aspect-ratio: 1; max-width: 320px; margin: 0 auto; overflow: hidden; }
 .music__art img { width: 100%; height: 100%; object-fit: cover; }
+.music__type { opacity: 0.35; margin-bottom: 0.5rem; }
+.music__title { font-size: clamp(2.2rem, 7vw, 4.5rem); }
+.music__meta { margin-top: 0.75rem; opacity: 0.4; }
+.music__desc {
+  margin-top: 1.25rem;
+  opacity: 0.35;
+  font-size: 13px;
+  line-height: 1.75;
+  max-width: 520px;
+}
+.music__highlights {
+  margin-top: 1.25rem;
+  opacity: 0.3;
+  font-size: 12px;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+}
+.music__tracks { margin-top: 1.5rem; }
+.music__tracks-label { opacity: 0.35; margin-bottom: 0.75rem; }
+.music__tracklist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  columns: 2;
+  column-gap: 2rem;
+  opacity: 0.32;
+  font-size: 12px;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+}
+.music__tracklist li { break-inside: avoid; }
 .music__links { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-top: 1.5rem; }
 
 /* Videos */
@@ -464,6 +547,67 @@ ul { list-style: none; margin: 0; padding: 0; }
   padding-top: calc(var(--header-h) + 3rem);
 }
 .videos--page .videos__grid { margin-top: 2rem; }
+.videos__intro {
+  margin: 1.25rem auto 0;
+  max-width: 560px;
+  opacity: 0.35;
+  font-size: 13px;
+  line-height: 1.75;
+}
+.videos__footer { text-align: center; margin-top: 3rem; }
+.video-featured {
+  padding: 0 clamp(1.25rem, 4vw, 3rem) var(--pad);
+  background: var(--black);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.video-featured__grid {
+  display: grid;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+.video-featured__embed {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: var(--dark);
+  overflow: hidden;
+}
+.video-featured__embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-featured__poster {
+  position: relative;
+  display: block;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: var(--dark);
+}
+.video-featured__poster img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+.video-featured__play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background: rgba(0,0,0,0.35);
+}
+.video-featured__title { margin-top: 1rem; font-size: clamp(2rem, 6vw, 4rem); }
+.video-featured__meta { margin-top: 0.75rem; opacity: 0.4; }
+.video-featured__desc {
+  margin-top: 1.25rem;
+  opacity: 0.35;
+  font-size: 13px;
+  line-height: 1.75;
+  max-width: 480px;
+}
+.video-card__body { padding: 0.85rem 1rem 1.1rem; }
+.video-card__meta { display: block; opacity: 0.35; margin-bottom: 0.35rem; font-size: 9px; }
 
 /* Shop grid */
 .shop-grid {
@@ -479,6 +623,53 @@ ul { list-style: none; margin: 0; padding: 0; }
 .shop-card__info { padding: 1.1rem; display: flex; justify-content: space-between; gap: 1rem; }
 .shop-card__title { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; }
 .shop-card__price { font-size: 10px; opacity: 0.55; white-space: nowrap; }
+
+.shop-page { background: var(--black); }
+.shop-page__featured {
+  padding: var(--pad) clamp(1.25rem, 4vw, 3rem) 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.shop-page__featured-grid {
+  display: grid;
+  gap: 3px;
+  margin-top: 1.5rem;
+}
+.shop-page__label { opacity: 0.35; }
+.shop-page__main { padding-bottom: var(--pad); }
+.shop-page__head {
+  padding: 2rem clamp(1.25rem, 4vw, 3rem) 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+}
+.shop-page__note { opacity: 0.35; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
+.shop-page__empty { text-align: center; padding: 4rem; opacity: 0.4; }
+.shop-page__pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  opacity: 0.45;
+}
+.collection-page {
+  padding: calc(var(--header-h) + 3rem) 0 var(--pad);
+}
+.collection-page__head {
+  padding: 0 clamp(1.25rem, 4vw, 3rem) 2rem;
+  text-align: center;
+}
+.collection-page__title { margin-top: 1rem; font-size: clamp(2.2rem, 7vw, 4.5rem); }
+.collection-page__desc {
+  margin: 1.25rem auto 0;
+  max-width: 560px;
+  opacity: 0.35;
+  font-size: 13px;
+  line-height: 1.75;
+}
+.collection-page__empty { text-align: center; padding: 4rem; opacity: 0.4; }
 
 /* Product */
 .product {
@@ -553,6 +744,10 @@ ul { list-style: none; margin: 0; padding: 0; }
   .release__links { justify-content: flex-start; }
   .music__item { grid-template-columns: 300px 1fr; }
   .music__art { margin: 0; }
+  .music__tracklist { columns: 2; }
+  .tour-info__grid { grid-template-columns: 1fr 1fr; }
+  .video-featured__grid { grid-template-columns: 1.4fr 1fr; }
+  .shop-page__featured-grid { grid-template-columns: repeat(3, 1fr); }
   .archive__grid { grid-template-columns: repeat(4, 1fr); }
   .videos__grid { grid-template-columns: repeat(2, 1fr); }
   .videos--page .videos__grid { grid-template-columns: repeat(3, 1fr); }

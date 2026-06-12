@@ -1,0 +1,39 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "eyebrow": "Official Merch",
+        "heading": "Shop",
+        "description": "STAR tour exclusives, hoodies, tees, hats, posters, and limited drops. Official 2HOLLIS merchandise.",
+        "link": "",
+        "link_label": "Learn More",
+        "link_external": false
+      }
+    },
+    "main": {
+      "type": "shop-page",
+      "settings": {
+        "collection": "",
+        "show_featured": true,
+        "featured_label": "Featured",
+        "featured_limit": 3,
+        "grid_heading": "All Products",
+        "note": "Limited quantities. STAR tour exclusives available while supplies last.",
+        "products_per_page": 24,
+        "empty_text": "Connect a collection in the theme editor to display products."
+      }
+    },
+    "cta": {
+      "type": "newsletter",
+      "settings": {
+        "eyebrow": "Drops",
+        "heading": "Merch Alerts",
+        "text": "Be first to know about restocks, tour exclusives, and limited releases.",
+        "link": "https://www.2hollis.life/newsletter/",
+        "link_label": "Join"
+      }
+    }
+  },
+  "order": ["hero", "main", "cta"]
+}

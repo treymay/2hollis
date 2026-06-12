@@ -2,7 +2,12 @@
   "sections": {
     "main": {
       "type": "main-collection",
-      "settings": {}
+      "settings": {
+        "eyebrow": "Shop",
+        "description": "Official 2HOLLIS merch. STAR tour exclusives, hoodies, tees, hats, and limited drops.",
+        "products_per_page": 24,
+        "empty_text": "No products in this collection."
+      }
     }
   },
   "order": ["main"]

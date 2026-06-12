@@ -3,6 +3,9 @@
     <div class="section-intro">
       <p class="type-label">{{ section.settings.eyebrow }}</p>
       <h2 class="type-headline" style="margin-top:1rem;">{{ section.settings.heading }}</h2>
+      {%- if section.settings.description != blank -%}
+        <p class="videos__intro">{{ section.settings.description }}</p>
+      {%- endif -%}
     </div>
   {%- endunless -%}
 
@@ -32,10 +35,21 @@
           {%- endif -%}
           <span class="video-card__play" aria-hidden="true">▶</span>
         </div>
-        <span class="video-card__label">{{ block.settings.title }}</span>
+        <div class="video-card__body">
+          {%- if block.settings.meta != blank -%}
+            <span class="video-card__meta type-label">{{ block.settings.meta }}</span>
+          {%- endif -%}
+          <span class="video-card__label">{{ block.settings.title }}</span>
+        </div>
       </a>
     {%- endfor -%}
   </div>
+
+  {%- if section.settings.channel_url != blank -%}
+    <div class="videos__footer">
+      <a href="{{ section.settings.channel_url }}" class="text-link" target="_blank" rel="noopener">{{ section.settings.channel_label }}</a>
+    </div>
+  {%- endif -%}
 </section>
 
 {% schema %}
@@ -46,7 +60,10 @@
     { "type": "checkbox", "id": "hide_header", "label": "Hide section header", "default": false },
     { "type": "checkbox", "id": "full_page", "label": "Full page layout", "default": false },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Visuals" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Video" }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "All Videos" },
+    { "type": "textarea", "id": "description", "label": "Description" },
+    { "type": "url", "id": "channel_url", "label": "YouTube channel URL" },
+    { "type": "text", "id": "channel_label", "label": "Channel link label", "default": "Subscribe on YouTube" }
   ],
   "blocks": [
     {
@@ -54,6 +71,7 @@
       "name": "Video",
       "settings": [
         { "type": "text", "id": "title", "label": "Title" },
+        { "type": "text", "id": "meta", "label": "Meta", "default": "Official Video" },
         { "type": "url", "id": "video_url", "label": "YouTube URL" },
         { "type": "image_picker", "id": "thumbnail", "label": "Thumbnail (optional)" },
         { "type": "text", "id": "thumbnail_url", "label": "Thumbnail URL (optional)" }

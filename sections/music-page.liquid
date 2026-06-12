@@ -1,11 +1,16 @@
-<div class="music">
-  <div class="section-intro" style="padding-top:0;">
-    <p class="type-label">{{ section.settings.eyebrow }}</p>
-    <h1 class="type-headline" style="margin-top:1rem;">{{ section.settings.heading }}</h1>
-  </div>
+<div class="music" data-reveal>
+  {%- if section.settings.show_heading -%}
+    <div class="section-intro music__intro">
+      <p class="type-label">{{ section.settings.eyebrow }}</p>
+      <h2 class="type-headline" style="margin-top:1rem;font-size:clamp(2rem,6vw,4rem);">{{ section.settings.heading }}</h2>
+      {%- if section.settings.intro != blank -%}
+        <p class="music__intro-text">{{ section.settings.intro }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
 
   {%- for block in section.blocks -%}
-    <article class="music__item" {{ block.shopify_attributes }}>
+    <article class="music__item{% if block.settings.featured %} music__item--featured{% endif %}" {{ block.shopify_attributes }}>
       <div class="music__art">
         {%- if block.settings.artwork != blank -%}
           {{ block.settings.artwork | image_url: width: 800 | image_tag: loading: 'lazy', alt: block.settings.title }}
@@ -13,11 +18,30 @@
           <img src="{{ block.settings.artwork_url }}" alt="{{ block.settings.title | escape }}" width="320" height="320" loading="lazy">
         {%- endif -%}
       </div>
-      <div>
-        <h2 class="type-headline" style="font-size:clamp(2.2rem,7vw,4.5rem);">{{ block.settings.title }}</h2>
-        <p class="type-label" style="margin-top:0.75rem;opacity:0.4;">{{ block.settings.year }}</p>
-        {%- if block.settings.tracks != blank -%}
-          <p style="margin-top:1.25rem;opacity:0.3;font-size:12px;line-height:1.8;letter-spacing:0.04em;">{{ block.settings.tracks }}</p>
+      <div class="music__body">
+        {%- if block.settings.release_type != blank -%}
+          <p class="music__type type-label">{{ block.settings.release_type }}</p>
+        {%- endif -%}
+        <h2 class="music__title type-headline">{{ block.settings.title }}</h2>
+        <p class="type-label music__meta">{{ block.settings.year }}</p>
+        {%- if block.settings.description != blank -%}
+          <p class="music__desc">{{ block.settings.description }}</p>
+        {%- endif -%}
+        {%- if block.settings.tracklist != blank -%}
+          <div class="music__tracks">
+            <p class="type-label music__tracks-label">Tracklist</p>
+            <ol class="music__tracklist">
+              {%- assign tracks = block.settings.tracklist | newline_to_br | split: '<br />' -%}
+              {%- for track in tracks -%}
+                {%- assign track_name = track | strip -%}
+                {%- if track_name != blank -%}
+                  <li>{{ track_name }}</li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ol>
+          </div>
+        {%- elsif block.settings.tracks != blank -%}
+          <p class="music__highlights">{{ block.settings.tracks }}</p>
         {%- endif -%}
         <div class="music__links">
           {%- if block.settings.stream_url != blank -%}
@@ -25,6 +49,12 @@
           {%- endif -%}
           {%- if block.settings.spotify_url != blank -%}
             <a href="{{ block.settings.spotify_url }}" class="text-link" style="margin-top:0;" target="_blank" rel="noopener">Spotify</a>
+          {%- endif -%}
+          {%- if block.settings.apple_url != blank -%}
+            <a href="{{ block.settings.apple_url }}" class="text-link" style="margin-top:0;" target="_blank" rel="noopener">Apple Music</a>
+          {%- endif -%}
+          {%- if block.settings.youtube_url != blank -%}
+            <a href="{{ block.settings.youtube_url }}" class="text-link" style="margin-top:0;" target="_blank" rel="noopener">YouTube</a>
           {%- endif -%}
         </div>
       </div>
@@ -37,21 +67,29 @@
   "name": "Music Page",
   "tag": "section",
   "settings": [
+    { "type": "checkbox", "id": "show_heading", "label": "Show section heading", "default": true },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Discography" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Music" }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "All Releases" },
+    { "type": "textarea", "id": "intro", "label": "Intro text" }
   ],
   "blocks": [
     {
       "type": "release",
       "name": "Release",
       "settings": [
+        { "type": "checkbox", "id": "featured", "label": "Featured layout", "default": false },
+        { "type": "text", "id": "release_type", "label": "Release type", "default": "Album" },
         { "type": "text", "id": "title", "label": "Title", "default": "STAR" },
-        { "type": "text", "id": "year", "label": "Year / type", "default": "2025 — Album" },
-        { "type": "textarea", "id": "tracks", "label": "Notable tracks" },
+        { "type": "text", "id": "year", "label": "Year / label", "default": "2025 — Interscope Records" },
+        { "type": "textarea", "id": "description", "label": "Description" },
+        { "type": "textarea", "id": "tracklist", "label": "Tracklist (one track per line)" },
+        { "type": "text", "id": "tracks", "label": "Highlights (fallback text)" },
         { "type": "image_picker", "id": "artwork", "label": "Artwork" },
         { "type": "text", "id": "artwork_url", "label": "Artwork URL" },
         { "type": "url", "id": "stream_url", "label": "Stream URL" },
-        { "type": "url", "id": "spotify_url", "label": "Spotify URL" }
+        { "type": "url", "id": "spotify_url", "label": "Spotify URL" },
+        { "type": "url", "id": "apple_url", "label": "Apple Music URL" },
+        { "type": "url", "id": "youtube_url", "label": "YouTube URL" }
       ]
     }
   ],

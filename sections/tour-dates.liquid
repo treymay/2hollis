@@ -10,7 +10,14 @@
   {%- endunless -%}
 
   <ul class="tour__list">
+    {%- assign current_group = '' -%}
     {%- for block in section.blocks -%}
+      {%- if block.settings.group != blank and block.settings.group != current_group -%}
+        {%- assign current_group = block.settings.group -%}
+        <li class="tour__group" aria-hidden="true">
+          <span class="type-label">{{ current_group }}</span>
+        </li>
+      {%- endif -%}
       <li class="tour__row{% if block.settings.is_completed %} tour__row--past{% endif %}" {{ block.shopify_attributes }}>
         {%- if block.settings.ticket_url != blank and block.settings.is_completed == false -%}
           <a href="{{ block.settings.ticket_url }}" class="tour__link" target="_blank" rel="noopener">
@@ -69,6 +76,7 @@
       "name": "Date",
       "settings": [
         { "type": "text", "id": "city", "label": "City", "default": "NEW YORK" },
+        { "type": "text", "id": "group", "label": "Group label", "info": "Shows once when group changes (e.g. Headline, Festivals)" },
         { "type": "text", "id": "date", "label": "Date", "default": "JUN 05 2026" },
         { "type": "text", "id": "venue", "label": "Venue" },
         { "type": "text", "id": "support", "label": "Support / notes" },

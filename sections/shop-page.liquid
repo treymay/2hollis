@@ -1,0 +1,87 @@
+<section class="shop-page" data-reveal>
+  {%- assign collection = section.settings.collection -%}
+
+  {%- if section.settings.show_featured and collection != blank and collection.products_count > 0 -%}
+    <div class="shop-page__featured">
+      <p class="type-label shop-page__label">{{ section.settings.featured_label }}</p>
+      <div class="shop-page__featured-grid">
+        {%- for product in collection.products limit: section.settings.featured_limit -%}
+          <a href="{{ product.url }}" class="shop-card shop-card--featured">
+            <div class="shop-card__img">
+              {%- if product.featured_image -%}
+                {{ product.featured_image | image_url: width: 1000 | image_tag: loading: 'lazy', alt: product.title }}
+              {%- endif -%}
+            </div>
+            <div class="shop-card__info">
+              <span class="shop-card__title">{{ product.title | upcase }}</span>
+              <span class="shop-card__price">{{ product.price | money_without_trailing_zeros }}</span>
+            </div>
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+  <div class="shop-page__main">
+    {%- if section.settings.grid_heading != blank -%}
+      <div class="shop-page__head">
+        <p class="type-label">{{ section.settings.grid_heading }}</p>
+        {%- if section.settings.note != blank -%}
+          <p class="shop-page__note">{{ section.settings.note }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if collection != blank and collection.products_count > 0 -%}
+      {%- paginate collection.products by section.settings.products_per_page -%}
+        <div class="shop-grid">
+          {%- for product in collection.products -%}
+            <a href="{{ product.url }}" class="shop-card">
+              <div class="shop-card__img">
+                {%- if product.featured_image -%}
+                  {{ product.featured_image | image_url: width: 800 | image_tag: loading: 'lazy', alt: product.title }}
+                {%- endif -%}
+              </div>
+              <div class="shop-card__info">
+                <span class="shop-card__title">{{ product.title | upcase }}</span>
+                <span class="shop-card__price">{{ product.price | money_without_trailing_zeros }}</span>
+              </div>
+            </a>
+          {%- endfor -%}
+        </div>
+
+        {%- if paginate.pages > 1 -%}
+          <nav class="shop-page__pagination type-label" aria-label="Pagination">
+            {%- if paginate.previous -%}
+              <a href="{{ paginate.previous.url }}">Previous</a>
+            {%- endif -%}
+            <span>{{ paginate.current_page }} / {{ paginate.pages }}</span>
+            {%- if paginate.next -%}
+              <a href="{{ paginate.next.url }}">Next</a>
+            {%- endif -%}
+          </nav>
+        {%- endif -%}
+      {%- endpaginate -%}
+    {%- else -%}
+      <p class="type-label shop-page__empty">{{ section.settings.empty_text }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Shop Page",
+  "tag": "section",
+  "settings": [
+    { "type": "collection", "id": "collection", "label": "Collection" },
+    { "type": "checkbox", "id": "show_featured", "label": "Show featured row", "default": true },
+    { "type": "text", "id": "featured_label", "label": "Featured label", "default": "Featured" },
+    { "type": "range", "id": "featured_limit", "label": "Featured products", "min": 2, "max": 4, "step": 1, "default": 3 },
+    { "type": "text", "id": "grid_heading", "label": "Grid heading", "default": "All Products" },
+    { "type": "text", "id": "note", "label": "Shipping / info note", "default": "Official 2HOLLIS merch. Limited drops." },
+    { "type": "range", "id": "products_per_page", "label": "Products per page", "min": 8, "max": 48, "step": 4, "default": 24 },
+    { "type": "text", "id": "empty_text", "label": "Empty collection text", "default": "No products available yet." }
+  ],
+  "presets": [{ "name": "Shop Page" }]
+}
+{% endschema %}

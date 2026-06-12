@@ -1,32 +1,60 @@
 <div class="page-shell">
-  <div style="padding:calc(var(--header-h) + 3rem) clamp(1.25rem,4vw,3rem) 1rem;">
-    <p class="type-label">Shop</p>
-    <h1 class="type-headline" style="margin-top:1rem;font-size:clamp(2.2rem,7vw,4.5rem);">{{ collection.title }}</h1>
-  </div>
+  <div class="collection-page" data-reveal>
+    <div class="collection-page__head">
+      <p class="type-label">{{ section.settings.eyebrow }}</p>
+      <h1 class="type-headline collection-page__title">{{ collection.title }}</h1>
+      {%- if section.settings.description != blank -%}
+        <p class="collection-page__desc">{{ section.settings.description }}</p>
+      {%- elsif collection.description != blank -%}
+        <p class="collection-page__desc">{{ collection.description }}</p>
+      {%- endif -%}
+    </div>
 
-  {%- paginate collection.products by 24 -%}
-    {%- if collection.products.size == 0 -%}
-      <p class="type-label" style="text-align:center;padding:4rem;opacity:0.4;">{{ 'collections.general.no_matches' | t }}</p>
-    {%- else -%}
-      <div class="shop-grid">
-        {%- for product in collection.products -%}
-          <a href="{{ product.url }}" class="shop-card">
-            <div class="shop-card__img">
-              {%- if product.featured_image -%}
-                {{ product.featured_image | image_url: width: 800 | image_tag: loading: 'lazy', alt: product.title }}
-              {%- endif -%}
-            </div>
-            <div class="shop-card__info">
-              <span class="shop-card__title">{{ product.title | upcase }}</span>
-              <span class="shop-card__price">{{ product.price | money_without_trailing_zeros }}</span>
-            </div>
-          </a>
-        {%- endfor -%}
-      </div>
-    {%- endif -%}
-  {%- endpaginate -%}
+    {%- paginate collection.products by section.settings.products_per_page -%}
+      {%- if collection.products.size == 0 -%}
+        <p class="type-label collection-page__empty">{{ section.settings.empty_text }}</p>
+      {%- else -%}
+        <div class="shop-grid">
+          {%- for product in collection.products -%}
+            <a href="{{ product.url }}" class="shop-card">
+              <div class="shop-card__img">
+                {%- if product.featured_image -%}
+                  {{ product.featured_image | image_url: width: 800 | image_tag: loading: 'lazy', alt: product.title }}
+                {%- endif -%}
+              </div>
+              <div class="shop-card__info">
+                <span class="shop-card__title">{{ product.title | upcase }}</span>
+                <span class="shop-card__price">{{ product.price | money_without_trailing_zeros }}</span>
+              </div>
+            </a>
+          {%- endfor -%}
+        </div>
+
+        {%- if paginate.pages > 1 -%}
+          <nav class="shop-page__pagination type-label" aria-label="Pagination">
+            {%- if paginate.previous -%}
+              <a href="{{ paginate.previous.url }}">Previous</a>
+            {%- endif -%}
+            <span>{{ paginate.current_page }} / {{ paginate.pages }}</span>
+            {%- if paginate.next -%}
+              <a href="{{ paginate.next.url }}">Next</a>
+            {%- endif -%}
+          </nav>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
 </div>
 
 {% schema %}
-{ "name": "Collection", "tag": "section", "settings": [] }
+{
+  "name": "Collection",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Shop" },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "Official 2HOLLIS merch. STAR tour exclusives and limited drops." },
+    { "type": "range", "id": "products_per_page", "label": "Products per page", "min": 8, "max": 48, "step": 4, "default": 24 },
+    { "type": "text", "id": "empty_text", "label": "Empty text", "default": "No products in this collection." }
+  ]
+}
 {% endschema %}
