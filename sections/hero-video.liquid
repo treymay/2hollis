@@ -21,23 +21,43 @@
     {%- endif -%}
 
     {%- if section.settings.hero_video != blank -%}
-      {{ section.settings.hero_video | video_tag: autoplay: true, loop: true, muted: true, playsinline: true, controls: false, preload: 'metadata', class: 'hero__video' }}
+      <div class="hero__video-wrap">
+        <video
+          class="hero__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          aria-hidden="true"
+          tabindex="-1"
+          disablepictureinpicture
+          disableremoteplayback
+          controlslist="nodownload noplaybackrate noremoteplayback nofullscreen"
+        >
+          {%- for source in section.settings.hero_video.sources -%}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+          {%- endfor -%}
+        </video>
+      </div>
     {%- elsif section.settings.video_url != blank -%}
-      <video
-        class="hero__video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        aria-hidden="true"
-        tabindex="-1"
-        disablepictureinpicture
-        disableremoteplayback
-        controlslist="nodownload noplaybackrate noremoteplayback nofullscreen"
-      >
-        <source src="{{ section.settings.video_url }}" type="video/mp4">
-      </video>
+      <div class="hero__video-wrap">
+        <video
+          class="hero__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          aria-hidden="true"
+          tabindex="-1"
+          disablepictureinpicture
+          disableremoteplayback
+          controlslist="nodownload noplaybackrate noremoteplayback nofullscreen"
+        >
+          <source src="{{ section.settings.video_url }}" type="video/mp4">
+        </video>
+      </div>
     {%- elsif section.settings.youtube_id != blank -%}
       <div class="hero__yt" aria-hidden="true">
         <div

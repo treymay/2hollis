@@ -51,6 +51,18 @@
       video.muted = true;
       video.controls = false;
       video.removeAttribute('controls');
+      video.setAttribute('playsinline', '');
+      video.setAttribute('webkit-playsinline', '');
+
+      var fitVideo = function () {
+        video.style.width = '100%';
+        video.style.height = '100%';
+        video.style.objectFit = 'cover';
+      };
+
+      fitVideo();
+      video.addEventListener('loadedmetadata', fitVideo);
+
       var play = video.play();
       if (play && play.catch) {
         play.catch(function () {
